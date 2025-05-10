@@ -37,7 +37,7 @@ export default function ContactSection() {
               Contact Us
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get in touch to book a performance, inquire about joining our team, or ask any questions
+              Get in touch to book a performance or inquire about joining our team
             </p>
           </div>
         </AnimatedComponent>
@@ -61,10 +61,6 @@ export default function ContactSection() {
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="joining" id="joining" />
                       <Label htmlFor="joining">Join Team</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="general" id="general" />
-                      <Label htmlFor="general">General Inquiry</Label>
                     </div>
                   </RadioGroup>
                   
@@ -114,9 +110,7 @@ export default function ContactSection() {
                         placeholder={
                           formType === 'booking' 
                             ? "Tell us about your event, location, and any specific requirements..." 
-                            : formType === 'joining'
-                            ? "Tell us a bit about yourself and why you'd like to join our team..."
-                            : "How can we help you?"
+                            : "Tell us a bit about yourself and why you'd like to join our team..."
                         }
                         rows={5} 
                         required 
@@ -191,9 +185,6 @@ export default function ContactSection() {
                         <p className="text-muted-foreground">Performances available year-round</p>
                         <p className="text-muted-foreground">Training sessions: Tue/Thu evenings & Sat mornings</p>
                       </div>
-                    </div>
-                    
-                    <div className="flex items-start">
                     </div>
                   </div>
                 </CardContent>

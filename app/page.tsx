@@ -3,14 +3,14 @@ import AboutSection from '@/components/about-section';
 import JoinSection from '@/components/join-section';
 import GallerySection from '@/components/gallery-section';
 import ContactSection from '@/components/contact-section';
-import PerformancesSection from '@/components/performances-section';
+import TestimonialsSection from '@/components/testimonials-section';
 
 export default function Home() {
   return (
     <div className="w-full overflow-hidden">
       <HeroSection />
       <AboutSection />
-      <PerformancesSection />
+      <TestimonialsSection />
       <GallerySection />
       <JoinSection />
       <ContactSection />

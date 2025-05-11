@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import dynamic from 'next/dynamic';
 import { ThemeProvider } from '@/components/theme-provider';
+import { StickyBanner } from '@/components/sticky-banner';
 
 // Dynamically import components that might use browser APIs
 const Navbar = dynamic(() => import('@/components/navbar'), {
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-background antialiased">
         <ThemeProvider attribute="class" defaultTheme="light">
           <div className="flex min-h-screen flex-col">
+            <StickyBanner />
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />

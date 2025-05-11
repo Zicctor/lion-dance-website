@@ -17,7 +17,7 @@ export default function AboutSection() {
           <AnimatedComponent animation="fadeInLeft">
             <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-lg shadow-xl">
               <Image
-                src="https://images.pexels.com/photos/6158151/pexels-photo-6158151.jpeg"
+                src="https://images.unsplash.com/photo-1600582201908-183d607504c3?q=80&w=1998&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Lion Dance Performers"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

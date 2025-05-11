@@ -7,32 +7,32 @@ import { AnimatedComponent } from '@/components/animated-component';
 
 const galleryImages = [
   {
-    src: "https://images.pexels.com/photos/4571219/pexels-photo-4571219.jpeg",
+    src: "https://images.pexels.com/photos/2354073/pexels-photo-2354073.jpeg",
     alt: "Lion dance performers in colorful costumes",
     category: "performance"
   },
   {
-    src: "https://images.pexels.com/photos/6158205/pexels-photo-6158205.jpeg",
+    src: "https://images.unsplash.com/photo-1661261979056-14986bae5b8f?q=80&w=2081&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Close-up of a traditional lion head", 
     category: "performance"
   },
   {
-    src: "https://images.pexels.com/photos/6147369/pexels-photo-6147369.jpeg",
+    src: "https://images.unsplash.com/photo-1661261978957-1b7191277dc0?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Lion dance team performing",
     category: "events"
   },
   {
-    src: "https://images.pexels.com/photos/6158177/pexels-photo-6158177.jpeg",
+    src: "https://images.unsplash.com/photo-1675784061303-576f0dd0157e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Lion dance at a cultural festival",
     category: "events"
   },
   {
-    src: "https://images.pexels.com/photos/6147160/pexels-photo-6147160.jpeg",
+    src: "https://images.unsplash.com/photo-1644097219198-a9ca9ae46352?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Lion dance team during training",
     category: "training"
   },
   {
-    src: "https://images.pexels.com/photos/6158151/pexels-photo-6158151.jpeg",
+    src: "https://images.pexels.com/photos/15473417/pexels-photo-15473417/free-photo-of-two-chinese-dragons.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     alt: "Two lion dance costumes at an event",
     category: "performance"
   }

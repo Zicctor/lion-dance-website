@@ -65,8 +65,7 @@ export default function HeroSection() {
       <div className="relative z-20 container mx-auto px-4 flex flex-col items-center text-center">
         <AnimatedComponent delay={0.1}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-            <span className="block">AuLac</span>
-            <span className="text-secondary block">Lion Dance</span>
+            <span className="block bg-gradient-to-r from-[#ff6b6b] to-[#a70a0f] bg-clip-text text-transparent">AuLac Lion</span>
           </h1>
         </AnimatedComponent>
 

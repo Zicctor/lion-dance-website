@@ -40,7 +40,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="min-h-screen bg-background antialiased">
         <ThemeProvider attribute="class" defaultTheme="light">
-          <div className="flex min-h-screen flex-col">
+          <div className="flex min-h-screen flex-col pt-10">
             <StickyBanner />
             <Navbar />
             <main className="flex-1">{children}</main>

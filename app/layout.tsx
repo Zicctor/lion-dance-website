@@ -4,8 +4,8 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import dynamic from 'next/dynamic';
 import { ThemeProvider } from '@/components/theme-provider';
 import { StickyBanner } from '@/components/sticky-banner';
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 // Dynamically import components that might use browser APIs
 const Navbar = dynamic(() => import('@/components/navbar'), {
@@ -42,13 +42,17 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="min-h-screen bg-background antialiased">
         <ThemeProvider attribute="class" defaultTheme="light">
-          <div className="flex min-h-screen flex-col pt-10">
-            <StickyBanner />
+          <div className="flex min-h-screen">
             <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            <div className="flex-1">
+              <StickyBanner />
+              <main>{children}</main>
+              <Footer />
+            </div>
           </div>
         </ThemeProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

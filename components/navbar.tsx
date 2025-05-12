@@ -56,22 +56,31 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Logo Section */}
+      <div className="bg-background py-6">
+        <div className="container mx-auto px-4 text-center">
+          <Link href="/" className="inline-block">
+            <div className="flex flex-col items-center">
+              <h1 className="font-playfair text-3xl font-bold text-gradient mb-1">
+                Au Lac Lion Dance
+              </h1>
+              <p className="font-playfair text-lg text-white/90">
+                Đội Lân Âu Lạc
+              </p>
+            </div>
+          </Link>
+        </div>
+      </div>
+
       {/* Main navigation */}
       <nav
         className={`transition-all duration-300 ${
           isScrolled ? 'glass shadow-lg py-2' : 'bg-transparent py-4'
         }`}
       >
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-playfair text-2xl font-bold text-gradient">
-              Au Lac
-            </span>
-            <span className="font-playfair text-xl text-white/90">Lion Dance</span>
-          </Link>
-
+        <div className="container mx-auto px-4">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex justify-center items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -84,14 +93,16 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden text-white"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </Button>
+          <div className="md:hidden flex justify-end">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

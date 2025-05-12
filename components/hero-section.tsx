@@ -66,6 +66,7 @@ export default function HeroSection() {
         <AnimatedComponent delay={0.1}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
             <span className="block bg-gradient-to-r from-[#ff6b6b] to-[#a70a0f] bg-clip-text text-transparent">Au Lac Lion Association</span>
+            <span className="block bg-gradient-to-r from-[#ff6b6b] to-[#a70a0f] bg-clip-text text-transparent">Đội Lân Âu Lạc</span>
           </h1>
         </AnimatedComponent>
 
@@ -90,9 +91,6 @@ export default function HeroSection() {
               className="bg-background/10 hover:bg-background/20 backdrop-blur-sm border-white text-white px-8 py-6 text-lg rounded-md"
               asChild
             >
-              <a href="https://www.instagram.com/aulaclions/" target="_blank" rel="noopener noreferrer">
-                <p>Contact us</p>
-              </a>
             </Button>
           </div>
         </AnimatedComponent>

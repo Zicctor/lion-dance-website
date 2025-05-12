@@ -31,14 +31,14 @@ export default function AboutSection() {
             <div className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-bold text-primary">Our Story</h3>
               <p className="text-lg text-muted-foreground">
-              Founded in 2024 by Phuong An Le and based in Ohio, the Au Lac Lion Dance Team is dedicated to bringing 
-              the vibrant tradition of lion dancing to communities across the region. Our team is composed of passionate 
-              and skilled performers committed to preserving and sharing this rich cultural art form with authenticity, energy, and pride.
+              Founded in 2024 by Phuong An Le and based in Dayton Ohio, the Au Lac Lion Dance Team is dedicated to bringing the vibrant tradition of lion dancing to communities across the region. 
+              Our team is composed of passionate and skilled performers—ranging from middle school students to 
+              young adults—who are united by a shared commitment to preserving and sharing this rich cultural art form with authenticity, energy, and pride.
               </p>
               
               <h3 className="text-2xl md:text-3xl font-bold text-primary">Our Mission</h3>
               <p className="text-lg text-muted-foreground">
-                We strive to promote cultural understanding through authentic lion dance performances, 
+                We strive to promote cultural understanding through lion dance performances, 
                 educate the community about this important tradition, and spread joy and good fortune 
                 through our energetic shows.
               </p>

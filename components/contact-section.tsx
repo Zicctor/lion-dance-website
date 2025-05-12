@@ -70,7 +70,7 @@ export default function ContactSection() {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" placeholder="your.email@example.com" required />
+                        <Input id="email" type="email" placeholder="Aulacmualan@gmail.com" required />
                       </div>
                     </div>
                     
@@ -155,7 +155,7 @@ export default function ContactSection() {
                       <Phone className="h-5 w-5 text-primary shrink-0 mt-1 mr-3" />
                       <div>
                         <h4 className="font-medium">Phone</h4>
-                        <p className="text-muted-foreground">(415) 555-8888</p>
+                        <p className="text-muted-foreground">937-993-6511</p>
                       </div>
                     </div>
                     
@@ -163,7 +163,7 @@ export default function ContactSection() {
                       <Mail className="h-5 w-5 text-primary shrink-0 mt-1 mr-3" />
                       <div>
                         <h4 className="font-medium">Email</h4>
-                        <p className="text-muted-foreground">contact@aulaclion.dance</p>
+                        <p className="text-muted-foreground">Aulacmualan@gmail.com</p>
                       </div>
                     </div>
                   </div>

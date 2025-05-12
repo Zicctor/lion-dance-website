@@ -23,7 +23,7 @@ export default function JoinSection() {
           <AnimatedComponent>
             <Card>
               <CardHeader>
-                <CardTitle>Lion Dance Performers</CardTitle>
+                <CardTitle>What you will learn</CardTitle>
                 <CardDescription>
                   Join as a performer and be the heart of our lion dance team
                 </CardDescription>

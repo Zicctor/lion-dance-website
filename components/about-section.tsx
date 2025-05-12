@@ -28,20 +28,23 @@ export default function AboutSection() {
           </AnimatedComponent>
 
           <AnimatedComponent animation="fadeInRight" delay={0.2}>
-            <div className="space-y-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary">Our Story</h3>
-              <p className="text-lg text-muted-foreground">
-              Founded in 2024 by founder Phuong An Le and based in Dayton Ohio, the Au Lac Lion Dance Team is dedicated to bringing the vibrant tradition of lion dancing to communities across the region. 
-              Our team is composed of passionate and skilled performers—ranging from middle school students to 
-              young adults—who are united by a shared commitment to preserving and sharing this rich cultural art form with authenticity, energy, and pride.
-              </p>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">Our Story</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Founded in 2024 by Phuong An Le and based in Dayton, Ohio, the <span className="font-medium text-primary">Au Lac Lion Dance Team</span> is dedicated to bringing the vibrant tradition of lion dancing to communities across the region.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed mt-3">
+                  Our team comprises passionate performers—from middle school students to young adults—united by a commitment to preserving and sharing this rich cultural art form with authenticity, energy, and pride.
+                </p>
+              </div>
               
-              <h3 className="text-2xl md:text-3xl font-bold text-primary">Our Mission</h3>
-              <p className="text-lg text-muted-foreground">
-                We strive to promote cultural understanding through lion dance performances, 
-                educate the community about this important tradition, and spread joy and good fortune 
-                through our energetic shows.
-              </p>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">Our Mission</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  We strive to promote cultural understanding through captivating lion dance performances, educate communities about this important tradition, and spread joy and good fortune through our energetic shows.
+                </p>
+              </div>
             </div>
           </AnimatedComponent>
         </div>

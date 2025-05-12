@@ -3,13 +3,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Instagram, Facebook, Mail, Phone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/#about' },
   { name: 'Gallery', href: '/#gallery' },
-  { name: 'FAQ', href: '/#faq' },
   { name: 'Join Us', href: '/#join' },
   { name: 'Contact', href: '/#contact' },
 ];
@@ -32,83 +31,60 @@ export default function Navbar() {
   }, []);
 
   return (
-    <>
-      {/* Mobile Menu Button */}
-      <Button
-        variant="ghost"
-        size="icon"
-        className="md:hidden fixed top-4 left-4 z-50 text-white"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      >
-        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-      </Button>
+    <header
+      className={`sticky top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'glass shadow-lg py-2' : 'bg-transparent py-4'
+      }`}
+    >
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <Link href="/" className="flex items-center gap-2">
+          <span className="font-playfair text-2xl font-bold text-gradient">
+            AuLac
+          </span>
+          <span className="font-playfair text-xl text-white/90">Lion Dance</span>
+        </Link>
 
-      {/* Sidebar Navigation */}
-      <nav className={`
-        fixed md:static top-0 left-0 h-full w-64 bg-background border-r border-border
-        transform transition-transform duration-300 z-40
-        ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-      `}>
-        <div className="flex flex-col h-full p-6">
-          {/* Logo */}
-          <Link href="/" className="mb-8">
-            <span className="font-playfair text-2xl font-bold text-gradient block">
-              Au Lac Lion
-            </span>
-            <span className="font-playfair text-lg text-foreground/80">
-              Đội Lân Âu Lạc
-            </span>
-          </Link>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-white/80 hover:text-red-500 transition-colors font-medium"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
 
-          {/* Navigation Links */}
-          <div className="space-y-4">
+        {/* Mobile Menu Button */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden text-white"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </Button>
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <nav className="md:hidden glass shadow-lg">
+          <div className="container mx-auto px-4 py-4 flex flex-col">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="block text-foreground/80 hover:text-primary transition-colors"
+                className="py-3 text-white/80 hover:text-red-500 transition-colors border-b border-white/10 last:border-0"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
           </div>
-
-          {/* Contact Info */}
-          <div className="mt-auto space-y-4">
-            <div className="flex items-center gap-2 text-foreground/80">
-              <Mail size={16} />
-              <a href="mailto:Aulacmualan@gmail.com">Aulacmualan@gmail.com</a>
-            </div>
-            <div className="flex items-center gap-2 text-foreground/80">
-              <Phone size={16} />
-              <a href="tel:937-993-6511">937-993-6511</a>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex gap-4 pt-4 border-t border-border">
-              <a
-                href="https://instagram.com/aulaclions"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/80 hover:text-primary transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="https://facebook.com/aulaclions"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/80 hover:text-primary transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </>
+        </nav>
+      )}
+    </header>
   );
 }

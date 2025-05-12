@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Textarea } from '@/components/ui/textarea';
-import { Calendar, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 export default function ContactSection() {
   const [formType, setFormType] = useState('booking');
@@ -33,9 +33,7 @@ export default function ContactSection() {
       <div className="container mx-auto px-4">
         <AnimatedComponent>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Contact Us
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Contact Us</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Get in touch to book a performance or inquire about joining our team
             </p>
@@ -47,7 +45,7 @@ export default function ContactSection() {
             <Card className="overflow-hidden">
               <CardContent className="p-0">
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3>
+                  <h3 className="text-2xl font-bold mb-6">Send Us an Inquiry</h3>
                   
                   <RadioGroup 
                     defaultValue="booking" 
@@ -154,15 +152,6 @@ export default function ContactSection() {
                   
                   <div className="space-y-4">
                     <div className="flex items-start">
-                      <MapPin className="h-5 w-5 text-primary shrink-0 mt-1 mr-3" />
-                      <div>
-                        <h4 className="font-medium">Location</h4>
-                        <p className="text-muted-foreground">123 Cultural Center Way</p>
-                        <p className="text-muted-foreground">San Francisco, CA 94103</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
                       <Phone className="h-5 w-5 text-primary shrink-0 mt-1 mr-3" />
                       <div>
                         <h4 className="font-medium">Phone</h4>
@@ -177,15 +166,6 @@ export default function ContactSection() {
                         <p className="text-muted-foreground">contact@aulaclion.dance</p>
                       </div>
                     </div>
-                    
-                    <div className="flex items-start">
-                      <Calendar className="h-5 w-5 text-primary shrink-0 mt-1 mr-3" />
-                      <div>
-                        <h4 className="font-medium">Availability</h4>
-                        <p className="text-muted-foreground">Performances available year-round</p>
-                        <p className="text-muted-foreground">Training sessions: Tue/Thu evenings & Sat mornings</p>
-                      </div>
-                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -198,24 +178,26 @@ export default function ContactSection() {
                     <div>
                       <h4 className="font-medium">How far in advance should I book?</h4>
                       <p className="text-muted-foreground">
-                        We recommend booking at least 4-6 weeks in advance, especially for popular dates like 
-                        Lunar New Year. Rush bookings may be accommodated based on availability.
+                        We recommend booking at least 4–6 weeks in advance, especially for high-demand dates such as Lunar New Year. 
+                        While we may be able to accommodate rush bookings made less than 4 weeks in advance, 
+                        please note that an additional fee will apply based on availability.
                       </p>
                     </div>
                     
                     <div>
                       <h4 className="font-medium">What areas do you serve?</h4>
                       <p className="text-muted-foreground">
-                        We primarily perform throughout the Bay Area, but can travel to other locations for 
-                        additional travel fees.
+                        While our performances are primarily based in the Dayton area, we are available to travel to other locations. 
+                        Additional travel fees may apply depending on the distance and location.
                       </p>
                     </div>
                     
                     <div>
                       <h4 className="font-medium">Do I need any special setup for a performance?</h4>
                       <p className="text-muted-foreground">
-                        We require a clear space for the performance area. The exact dimensions depend on your 
-                        chosen package. We'll provide all necessary equipment.
+                        A clear and unobstructed performance area is required for our lion dance shows. 
+                        While exact space requirements may vary depending on the venue and performance type, we will work with you to determine the best setup. 
+                        All necessary equipment will be provided by our team.
                       </p>
                     </div>
                   </div>

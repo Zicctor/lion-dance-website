@@ -29,7 +29,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'AuLac Lion Dance Team',
+  title: 'Au Lac | Lion Dance Team',
   description: 'Traditional lion dance performances for events and celebrations',
 };
 

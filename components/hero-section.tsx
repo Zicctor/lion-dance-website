@@ -65,8 +65,8 @@ export default function HeroSection() {
       <div className="relative z-20 container mx-auto px-4 flex flex-col items-center text-center">
         <AnimatedComponent delay={0.1}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-            <span className="block bg-gradient-to-r from-[#ff6b6b] to-[#a70a0f] bg-clip-text text-transparent">Au Lac Lion Association</span>
-            <span className="block bg-gradient-to-r from-[#ff6b6b] to-[#a70a0f] bg-clip-text text-transparent">Đội Lân Âu Lạc</span>
+            <span className="block bg-gradient-to-r from-[#ff6b6b] to-[#a70a0f] bg-clip-text text-transparent mb-2">Au Lac Lion Association</span>
+            <span className="block text-[#ff6b6b]">Đội Lân Âu Lạc</span>
           </h1>
         </AnimatedComponent>
 

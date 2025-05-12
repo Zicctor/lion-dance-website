@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Mail, Phone, Instagram, Facebook } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -45,17 +45,56 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-white/80 hover:text-red-500 transition-colors font-medium"
+        <div className="hidden md:flex items-center gap-8">
+          <nav className="flex gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-white/80 hover:text-red-500 transition-colors font-medium"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-6">
+            <a 
+              href="mailto:Aulacmualan@gmail.com" 
+              className="text-white/80 hover:text-red-500 transition-colors flex items-center gap-2"
             >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+              <Mail className="h-4 w-4" />
+              <span className="hidden lg:inline">Aulacmualan@gmail.com</span>
+            </a>
+            <a 
+              href="tel:937-993-6511" 
+              className="text-white/80 hover:text-red-500 transition-colors flex items-center gap-2"
+            >
+              <Phone className="h-4 w-4" />
+              <span className="hidden lg:inline">937-993-6511</span>
+            </a>
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://www.instagram.com/aulaclions/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-red-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.facebook.com/profile.php?id=61574831281175&mibextid=wwXIfr&rdid=MpFIbHW3yi8AM7jd&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14yd61VZWr%2F%3Fmibextid%3DwwXIfr" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-red-500 transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+        </div>
 
         {/* Mobile Menu Button */}
         <Button
@@ -82,6 +121,42 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <div className="flex flex-col gap-4 pt-4">
+              <a 
+                href="mailto:Aulacmualan@gmail.com" 
+                className="text-white/80 hover:text-red-500 transition-colors flex items-center gap-2"
+              >
+                <Mail className="h-4 w-4" />
+                Aulacmualan@gmail.com
+              </a>
+              <a 
+                href="tel:937-993-6511" 
+                className="text-white/80 hover:text-red-500 transition-colors flex items-center gap-2"
+              >
+                <Phone className="h-4 w-4" />
+                937-993-6511
+              </a>
+              <div className="flex gap-4">
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-red-500 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-red-500 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
           </div>
         </nav>
       )}

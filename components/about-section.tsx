@@ -42,17 +42,6 @@ export default function AboutSection() {
                 educate the community about this important tradition, and spread joy and good fortune 
                 through our energetic shows.
               </p>
-              
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="bg-secondary/10 rounded-lg p-6 text-center">
-                  <h4 className="text-4xl font-bold text-secondary mb-2">10+</h4>
-                  <p className="text-sm text-muted-foreground">Performances</p>
-                </div>
-                <div className="bg-primary/10 rounded-lg p-6 text-center">
-                  <h4 className="text-4xl font-bold text-primary mb-2">6+</h4>
-                  <p className="text-sm text-muted-foreground">Team Members</p>
-                </div>
-              </div>
             </div>
           </AnimatedComponent>
         </div>

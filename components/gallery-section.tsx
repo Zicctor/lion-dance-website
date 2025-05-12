@@ -9,12 +9,12 @@ const galleryImages = [
   {
     src: "https://images.pexels.com/photos/2354073/pexels-photo-2354073.jpeg",
     alt: "Lion dance performers in colorful costumes",
-    category: "performance"
+    category: "events"
   },
   {
     src: "https://images.unsplash.com/photo-1661261979056-14986bae5b8f?q=80&w=2081&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Close-up of a traditional lion head", 
-    category: "performance"
+    category: "events"
   },
   {
     src: "https://images.unsplash.com/photo-1661261978957-1b7191277dc0?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -34,7 +34,7 @@ const galleryImages = [
   {
     src: "https://images.pexels.com/photos/15473417/pexels-photo-15473417/free-photo-of-two-chinese-dragons.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     alt: "Two lion dance costumes at an event",
-    category: "performance"
+    category: "training"
   }
 ];
 
@@ -60,7 +60,7 @@ export default function GallerySection() {
 
         <AnimatedComponent delay={0.2}>
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-            {["all", "performance", "events", "training"].map((filter) => (
+            {["all", "events", "training"].map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}

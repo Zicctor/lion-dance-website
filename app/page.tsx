@@ -4,6 +4,7 @@ import JoinSection from '@/components/join-section';
 import GallerySection from '@/components/gallery-section';
 import ContactSection from '@/components/contact-section';
 import TestimonialsSection from '@/components/testimonials-section';
+import FaqSection from '@/components/faq-section';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <AboutSection />
       <TestimonialsSection />
       <GallerySection />
+      <FaqSection />
       <JoinSection />
       <ContactSection />
     </div>

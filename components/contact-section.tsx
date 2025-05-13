@@ -169,40 +169,6 @@ export default function ContactSection() {
                   </div>
                 </CardContent>
               </Card>
-              
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">Frequently Asked Questions</h3>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-medium">How far in advance should I book?</h4>
-                      <p className="text-muted-foreground">
-                        We recommend booking at least 4–6 weeks in advance, especially for high-demand dates such as Lunar New Year. 
-                        While we may be able to accommodate rush bookings made less than 4 weeks in advance, 
-                        please note that an additional fee will apply based on availability.
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-medium">What areas do you serve?</h4>
-                      <p className="text-muted-foreground">
-                        While our performances are primarily based in the Dayton area, we are available to travel to other locations. 
-                        Additional travel fees may apply depending on the distance and location.
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-medium">Do I need any special setup for a performance?</h4>
-                      <p className="text-muted-foreground">
-                        A clear and unobstructed performance area is required for our lion dance shows. 
-                        While exact space requirements may vary depending on the venue and performance type, we will work with you to determine the best setup. 
-                        All necessary equipment will be provided by our team.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </AnimatedComponent>
         </div>

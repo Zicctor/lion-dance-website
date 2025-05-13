@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "What areas do you serve?",
-    answer: "We primarily perform throughout the Bay Area, but can travel to other locations for additional travel fees."
+    answer: "We primarily perform throughout the Dayton area, but can travel to other locations for additional travel fees."
   },
   {
     question: "Do I need any special setup for a performance?",

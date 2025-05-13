@@ -80,8 +80,13 @@ export default function HeroSection() {
 
         <AnimatedComponent delay={0.5}>
           <div className="flex flex-col sm:flex-row gap-4">
-            <ShimmerButton className="shadow-2xl">
-              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+            <ShimmerButton 
+              className="shadow-2xl"
+              shimmerSize="2px"
+              background="black"
+              borderRadius="100px"
+            >
+              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
                 <a href="#contact">Book a Performance</a>
               </span>
             </ShimmerButton>

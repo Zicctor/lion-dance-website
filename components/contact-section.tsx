@@ -75,7 +75,7 @@ export default function ContactSection() {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" placeholder="Aulacmualan@gmail.com" required />
+                        <Input id="email" type="email" placeholder="example@gmail.com" required />
                       </div>
                     </div>
                     

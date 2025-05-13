@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     question: "Do I need any special setup for a performance?",
-    answer: "We require a clear space for the performance area. The exact dimensions depend on your chosen package. We'll provide all necessary equipment."
+    answer: "A clear and unobstructed area is required for our lion dance performances. The exact space requirements will vary based on your selected package and venue layout. We will provide all necessary equipment for the show."
   },
   {
     question: "What types of events do you perform at?",

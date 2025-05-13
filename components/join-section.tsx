@@ -46,7 +46,7 @@ export default function JoinSection() {
                       <li>Good physical fitness and stamina</li>
                       <li>Commitment to regular practice sessions</li>
                       <li>Team-oriented mindset</li>
-                      <li>Interest in Chinese cultural traditions</li>
+                      <li>Interest in Vietnamese - Chinese cultural traditions</li>
                       <li>No prior experience necessary - we'll train you!</li>
                     </ul>
                   </div>

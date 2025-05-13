@@ -23,21 +23,6 @@ const logos = [
     url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/nymiivu48d5lywhf9rpf.svg',
     width: 130
   },
-  {
-    name: 'Airbnb',
-    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/pmblusboe7vkw8vxdknx.svg',
-    width: 120
-  },
-  {
-    name: 'Tina',
-    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/afqhiygywyphuou6xtxc.svg',
-    width: 90
-  },
-  {
-    name: 'Stackoverflow',
-    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/ts1j4mkooxqmscgptafa.svg',
-    width: 140
-  },
 ];
 
 export default function SponsorsSection() {

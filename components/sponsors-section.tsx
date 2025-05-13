@@ -69,7 +69,7 @@ export default function SponsorsSection() {
                   <img
                     key={key}
                     src={logo.url}
-                    className="h-10 w-28 px-2 brightness-0 dark:invert"
+                    className="h-10 w-28 px-2 invert brightness-[0.85] contrast-[1.2] opacity-80 hover:opacity-100 transition-opacity duration-300"
                     alt={`${logo.name}`}
                   />
                 ))}

@@ -94,12 +94,22 @@ const config: Config = {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(calc(-100% - 2rem))' },
         },
+        'shimmer-slide': {
+          from: { transform: 'translateX(-100%) translateY(-100%)' },
+          to: { transform: 'translateX(100%) translateY(100%)' },
+        },
+        'spin-around': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'float': 'float 3s ease-in-out infinite',
         'logo-cloud': 'logo-cloud 30s linear infinite',
+        'shimmer-slide': 'shimmer-slide 3s linear infinite',
+        'spin-around': 'spin-around 3s linear infinite',
       },
     },
   },

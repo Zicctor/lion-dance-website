@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Instagram } from 'lucide-react';
 import { AnimatedComponent } from '@/components/animated-component';
 import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
 
 const backgroundImages = [
   "https://media-int.vnecdn.net/3878063/data/images/2019/02/04/03_1549284178_VnEx.jpg",
@@ -79,13 +80,11 @@ export default function HeroSection() {
 
         <AnimatedComponent delay={0.5}>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-md"
-              asChild
-            >
-              <a href="#contact">Book a Performance</a>
-            </Button>
+            <ShimmerButton className="shadow-2xl">
+              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                <a href="#contact">Book a Performance</a>
+              </span>
+            </ShimmerButton>
             <Button 
               variant="outline" 
               size="lg" 

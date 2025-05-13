@@ -6,6 +6,7 @@ import { AnimatedComponent } from '@/components/animated-component';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Quote } from 'lucide-react';
+import { ShimmerButton } from '@/components/magicui/shimmer-button';
 
 const testimonials = [
   {
@@ -113,10 +114,12 @@ export default function TestimonialsSection() {
           </div>
 
           <AnimatedComponent delay={0.2}>
-            <div className="text-center mt-12">
-              <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
-                <a href="#contact">Book Your Performance</a>
-              </Button>
+            <div className="text-center mt-12 flex justify-center">
+              <ShimmerButton className="shadow-2xl">
+                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg">
+                  <a href="#contact">Book Your Performance</a>
+                </span>
+              </ShimmerButton>
             </div>
           </AnimatedComponent>
         </div>

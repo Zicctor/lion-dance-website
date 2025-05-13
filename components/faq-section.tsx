@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "How long is a typical performance?",
-    answer: "Our performances typically range from 15-45 minutes, depending on the package selected. Custom durations can be arranged for special events."
+    answer: "Our performances typically range from 15 to 45 minutes, depending on the event requirements. Custom durations can be arranged for special occasions."
   }
 ];
 

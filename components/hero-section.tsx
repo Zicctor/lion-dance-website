@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Instagram } from 'lucide-react';
 import { AnimatedComponent } from '@/components/animated-component';
+import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
 
 const backgroundImages = [
   "https://media-int.vnecdn.net/3878063/data/images/2019/02/04/03_1549284178_VnEx.jpg",
@@ -65,8 +66,8 @@ export default function HeroSection() {
       <div className="relative z-20 container mx-auto px-4 flex flex-col items-center text-center">
         <AnimatedComponent delay={0.1}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-            <span className="block bg-gradient-to-r from-[#ff6b6b] to-[#a70a0f] bg-clip-text text-transparent mb-2">Au Lac Lion Association</span>
-            <span className="block text-[#ff6b6b]">Đội Lân Âu Lạc</span>
+            <span className="block mb-4"><AnimatedGradientText>Au Lac Lion Association</AnimatedGradientText></span>
+            <span className="block"><AnimatedGradientText>Đội Lân Âu Lạc</AnimatedGradientText></span>
           </h1>
         </AnimatedComponent>
 

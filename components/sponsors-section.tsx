@@ -4,58 +4,77 @@ import { AnimatedComponent } from '@/components/animated-component';
 
 const logos = [
   {
-    name: 'Sponsor 1',
-    url: 'https://images.pexels.com/photos/15619823/pexels-photo-15619823/free-photo-of-logo-of-a-company.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    name: 'Vercel',
+    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881430/vercel_wordmark_dark_mhv8u8.svg',
   },
   {
-    name: 'Sponsor 2',
-    url: 'https://images.pexels.com/photos/15619823/pexels-photo-15619823/free-photo-of-logo-of-a-company.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    name: 'Nextjs',
+    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881475/nextjs_logo_dark_gfkf8m.svg',
   },
   {
-    name: 'Sponsor 3',
-    url: 'https://images.pexels.com/photos/15619823/pexels-photo-15619823/free-photo-of-logo-of-a-company.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    name: 'Prime',
+    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/t2awrrfzdvmg1chnzyfr.svg',
   },
   {
-    name: 'Sponsor 4',
-    url: 'https://images.pexels.com/photos/15619823/pexels-photo-15619823/free-photo-of-logo-of-a-company.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    name: 'Trustpilot',
+    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/tkfspxqmjflfllbuqxsi.svg',
+  },
+  {
+    name: 'Webflow',
+    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/nymiivu48d5lywhf9rpf.svg',
+  },
+  {
+    name: 'Airbnb',
+    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/pmblusboe7vkw8vxdknx.svg',
+  },
+  {
+    name: 'Tina',
+    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/afqhiygywyphuou6xtxc.svg',
+  },
+  {
+    name: 'Stackoverflow',
+    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/ts1j4mkooxqmscgptafa.svg',
+  },
+  {
+    name: 'mistral',
+    url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/tyos2ayezryjskox3wzs.svg',
   },
 ];
 
 export default function SponsorsSection() {
   return (
-    <section className="py-12 bg-background/50 backdrop-blur-sm">
+    <section className="py-16 bg-background/50 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <AnimatedComponent>
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-primary mb-8">
-            Our Trusted Partners
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-primary mb-10">
+            Our Sponsors
           </h2>
         </AnimatedComponent>
 
         <div
-          className="relative mt-6 flex gap-6 overflow-hidden py-4"
+          className="group relative mt-6 flex gap-6 overflow-hidden p-2"
           style={{
-            maskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)',
+            maskImage:
+              'linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 95%)',
           }}
         >
-          {Array(3).fill(null).map((_, groupIndex) => (
-            <div
-              key={groupIndex}
-              className="flex shrink-0 animate-[logo-cloud_30s_linear_infinite] flex-row justify-around gap-8"
-            >
-              {logos.map((logo, index) => (
-                <div
-                  key={`${groupIndex}-${index}`}
-                  className="relative w-32 h-16 bg-white/5 rounded-lg overflow-hidden backdrop-blur-sm border border-white/10 flex items-center justify-center group hover:border-primary/50 transition-colors"
-                >
+          {Array(5)
+            .fill(null)
+            .map((_, index) => (
+              <div
+                key={index}
+                className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6"
+              >
+                {logos.map((logo, key) => (
                   <img
+                    key={key}
                     src={logo.url}
-                    alt={logo.name}
-                    className="w-24 h-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity"
+                    className="h-10 w-28 px-2 brightness-0 dark:invert"
+                    alt={`${logo.name}`}
                   />
-                </div>
-              ))}
-            </div>
-          ))}
+                ))}
+              </div>
+            ))}
         </div>
       </div>
     </section>

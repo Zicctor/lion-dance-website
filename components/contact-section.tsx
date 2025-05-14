@@ -18,54 +18,19 @@ export default function ContactSection() {
   const [formType, setFormType] = useState('booking');
   const [formStatus, setFormStatus] = useState<null | 'submitting' | 'success' | 'error'>(null);
   const [date, setDate] = useState<Date>();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    position: '',
-  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus('submitting');
     
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          formType,
-          eventDate: date ? format(date, 'PPP') : undefined,
-        }),
-      });
-
-      if (!response.ok) throw new Error('Failed to send message');
-
-      setFormStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-        position: '',
-      });
-      setDate(undefined);
-    } catch (error) {
-      setFormStatus('error');
-    }
-
+    // Simulate form submission
     setTimeout(() => {
-      setFormStatus(null);
-    }, 3000);
+      setFormStatus('success');
+      // Reset form after a few seconds
+      setTimeout(() => {
+        setFormStatus(null);
+      }, 3000);
+    }, 1500);
   };
 
   return (
@@ -106,37 +71,18 @@ export default function ContactSection() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">Name</Label>
-                        <Input 
-                          id="name" 
-                          placeholder="Your name" 
-                          required 
-                          value={formData.name}
-                          onChange={handleInputChange}
-                        />
+                        <Input id="name" placeholder="Your name" required />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
-                        <Input 
-                          id="email" 
-                          type="email" 
-                          placeholder="example@gmail.com" 
-                          required 
-                          value={formData.email}
-                          onChange={handleInputChange}
-                        />
+                        <Input id="email" type="email" placeholder="example@gmail.com" required />
                       </div>
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="phone">Phone</Label>
-                        <Input 
-                          id="phone" 
-                          type="tel" 
-                          placeholder="(123) 456-7890"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                        />
+                        <Input id="phone" type="tel" placeholder="(123) 456-7890" />
                       </div>
                       
                       {formType === 'booking' && (
@@ -172,8 +118,6 @@ export default function ContactSection() {
                           <select 
                             id="position"
                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                            value={formData.position}
-                            onChange={handleInputChange}
                           >
                             <option value="">Select position...</option>
                             <option value="performer">Performer</option>
@@ -193,8 +137,6 @@ export default function ContactSection() {
                         }
                         rows={5} 
                         required 
-                        value={formData.message}
-                        onChange={handleInputChange}
                       />
                     </div>
                     

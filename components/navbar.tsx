@@ -39,7 +39,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <span className="font-playfair text-2xl font-bold text-gradient">
-            AuLac
+            Au Lac
           </span>
           <span className="font-playfair text-xl text-white/90">Lion Dance</span>
         </Link>
@@ -84,7 +84,7 @@ export default function Navbar() {
                 <Instagram className="h-5 w-5" />
               </a>
               <a 
-                href="https://www.facebook.com/profile.php?id=61574831281175&mibextid=wwXIfr&rdid=MpFIbHW3yi8AM7jd&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14yd61VZWr%2F%3Fmibextid%3DwwXIfr" 
+                href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white/80 hover:text-red-500 transition-colors"

@@ -19,13 +19,13 @@ const testimonials = [
     name: "David Wong",
     role: "Restaurant Owner",
     image: "https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg",
-    quote: "Having AuLac perform at our grand opening brought us incredible luck. The performance was spectacular and drew a huge crowd. Our business has been thriving ever since!",
+    quote: "Having Au Lac perform at our grand opening brought us incredible luck. The performance was spectacular and drew a huge crowd. Our business has been thriving ever since!",
   },
   {
     name: "Emily Martinez",
     role: "Cultural Festival Organizer",
     image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
-    quote: "AuLac Lion Dance Team has been the highlight of our festival for three years running. Their performances are always dynamic, authentic, and absolutely captivating.",
+    quote: "Au Lac Lion Dance Team has been the highlight of our festival for three years running. Their performances are always dynamic, authentic, and absolutely captivating.",
   },
   {
     name: "James & Linda Thompson",

@@ -54,7 +54,7 @@ export default function JoinSection() {
               </CardContent>
               <CardFooter>
                 <Button asChild className="w-full">
-                  <a href="#contact">Apply as Performer</a>
+                  <a href="https://www.instagram.com/aulaclions/" target="_blank" rel="noopener noreferrer">Contact Us directly</a>
                 </Button>
               </CardFooter>
             </Card>

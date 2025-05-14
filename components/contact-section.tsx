@@ -12,12 +12,18 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
+import Script from "next/script";
 
 export default function ContactSection() {
   const [date, setDate] = useState<Date>();
 
   return (
     <section id="contact" className="py-20 bg-background relative chinese-pattern">
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        strategy="afterInteractive"
+      />
+      
       <div className="container mx-auto px-4">
         <AnimatedComponent>
           <div className="text-center mb-12">
@@ -95,6 +101,8 @@ export default function ContactSection() {
                         required 
                       />
                     </div>
+                    
+                    <div className="cf-turnstile" data-sitekey="0x4AAAAAABdFGr6GqfkAEI_A" data-theme="light"></div>
                     
                     <Button 
                       type="submit" 

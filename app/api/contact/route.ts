@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Au Lac Lion Dance <onboarding@resend.dev>',
-      to: ['Aulacmualan@gmail.com'],
+      to: ['miyeda1120@hazhab.com'],
       subject: `New ${formType === 'booking' ? 'Booking' : 'Team Application'} Inquiry`,
       react: EmailTemplate({ 
         name, 

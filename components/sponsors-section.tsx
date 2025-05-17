@@ -33,7 +33,7 @@ export default function SponsorsSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-6 font-playfair">
             Our Sponsors
           </h2>
-          <p className="text-lg text-muted-foreground text-left max-w-2xl mx-auto mb-20">
+          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-20">
             Proud partners who support our mission to preserve and share cultural traditions
           </p>
         </AnimatedComponent>

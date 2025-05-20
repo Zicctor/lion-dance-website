@@ -8,10 +8,10 @@ import { AnimatedGradientText } from "@/components/magicui/animated-gradient-tex
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 
 const backgroundImages = [
-  "https://media-int.vnecdn.net/3878063/data/images/2019/02/04/03_1549284178_VnEx.jpg",
-  "https://ddk.1cdn.vn/2022/01/30/image.daidoanket.vn-images-upload-btvdk-01302022-_lsr1.jpeg",
-  "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/9/9/1091209/BINH1785.jpg",
-  "https://cdn.kpbs.org/dims4/default/e6b1c00/2147483647/strip/true/crop/1440x810+0+177/resize/1200x675!/quality/90/?url=http%3A%2F%2Fkpbs-brightspot.s3.us-west-2.amazonaws.com%2Fa5%2Fcf%2F04080cce4119854d83ca81a8bb8b%2F324930874-1416957192170893-2137161757645895711-n.jpg"
+  "images/hero/hero1-min.JPG",
+  "images/hero/hero2-min.JPG",
+  "images/hero/hero3-min.JPG",
+  "images/hero/hero4-min.JPG"
 ];
 
 export default function HeroSection() {

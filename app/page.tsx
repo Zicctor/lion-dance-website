@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <div className="w-full overflow-hidden">
       <HeroSection />
-      <SponsorsSection />
       <AboutSection />
       <TestimonialsSection />
       <GallerySection />

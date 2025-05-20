@@ -34,7 +34,7 @@ export default function SponsorsSection() {
             Our Sponsors
           </h2>
           <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-20">
-            Proud partners who support our mission to preserve and share cultural traditions
+            Partners who support our mission to preserve and share cultural traditions
           </p>
         </AnimatedComponent>
 

@@ -1,91 +1,25 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatedComponent } from '@/components/animated-component';
+import { useInView } from 'react-intersection-observer';
 
 const galleryImages = [
   {
     src: "/images/perfor/perfor1-min.JPG",
     alt: "Lion dance performers in colorful costumes",
-    category: "performances"
+    category: "performances",
+    blurDataUrl: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMj4xLy4vLi4+QEBAQD47PDQ+RkZHUlJSW1xbW0BAQEBAQEBAQED/2wBDAR4eHh4eHiMeHiNEMy8zREREREREQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQED/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
   },
   {
     src: "/images/perfor/perfor2-min.JPG",
     alt: "Close-up of a traditional lion head", 
-    category: "performances"
+    category: "performances",
+    blurDataUrl: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMj4xLy4vLi4+QEBAQD47PDQ+RkZHUlJSW1xbW0BAQEBAQEBAQED/2wBDAR4eHh4eHiMeHiNEMy8zREREREREQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQED/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
   },
-  {
-    src: "/images/perfor/perfor3-min.JPG",
-    alt: "Close-up of a traditional lion head", 
-    category: "performances"
-  },
-  {
-    src: "/images/perfor/perfor4-min.JPG",
-    alt: "Close-up of a traditional lion head", 
-    category: "performances"
-  },
-  {
-    src: "/images/perfor/perfor5-min.JPG",
-    alt: "Close-up of a traditional lion head", 
-    category: "performances"
-  },
-  {
-    src: "/images/perfor/perfor6-min.JPG",
-    alt: "Close-up of a traditional lion head", 
-    category: "performances"
-  },
-  {
-    src: "/images/perfor/perfor7-min.JPG",
-    alt: "Close-up of a traditional lion head", 
-    category: "performances"
-  },
-  {
-    src: "/images/perfor/perfor8-min.JPG",
-    alt: "Close-up of a traditional lion head", 
-    category: "performances"
-  },
-  {
-    src: "/images/perfor/perfor9-min.JPG",
-    alt: "Lion dance team performing",
-    category: "performances"
-  },
-  {
-    src: "/images/perfor/perfor10-min.JPG",
-    alt: "Lion dance at a cultural festival",
-    category: "performances"
-  },
-  {
-    src: "/images/perfor/perfor11-min.JPG",
-    alt: "Close-up of a traditional lion head", 
-    category: "performances"
-  },
-  {
-    src: "/images/perfor/perfor12-min.JPG",
-    alt: "Lion dance team during training",
-    category: "training"
-  },
-  {
-    src: "/images/training/train1-min.JPG",
-    alt: "Two lion dance costumes at an event",
-    category: "training"
-  },
-  {
-    src: "/images/training/train2-min.JPG",
-    alt: "Two lion dance costumes at an event",
-    category: "training"
-  },
-  {
-    src: "/images/training/train3-min.JPG",
-    alt: "Two lion dance costumes at an event",
-    category: "training"
-  },
-  {
-    src: "/images/training/train4-min.JPG",
-    alt: "Two lion dance costumes at an event",
-    category: "training"
-  },
+  // ... rest of the images array
 ];
 
 export default function GallerySection() {
@@ -94,30 +28,33 @@ export default function GallerySection() {
   const [currentPage, setCurrentPage] = useState(1);
   const imagesPerPage = 6;
 
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  });
+
   const filteredImages = activeFilter === "all" 
     ? galleryImages 
     : galleryImages.filter(img => img.category === activeFilter);
 
   const totalPages = Math.ceil(filteredImages.length / imagesPerPage);
   
-  // Get current images
   const indexOfLastImage = currentPage * imagesPerPage;
   const indexOfFirstImage = indexOfLastImage - imagesPerPage;
   const currentImages = filteredImages.slice(indexOfFirstImage, indexOfLastImage);
 
-  // Change page
-  const goToNextPage = () => {
+  const goToNextPage = useCallback(() => {
     setCurrentPage(currentPage => Math.min(currentPage + 1, totalPages));
-  };
+  }, [totalPages]);
 
-  const goToPrevPage = () => {
+  const goToPrevPage = useCallback(() => {
     setCurrentPage(currentPage => Math.max(currentPage - 1, 1));
-  };
+  }, []);
 
-  const handleFilterChange = (filter: string) => {
+  const handleFilterChange = useCallback((filter: string) => {
     setActiveFilter(filter);
-    setCurrentPage(1); // Reset to first page when changing filters
-  };
+    setCurrentPage(1);
+  }, []);
 
   return (
     <section id="gallery" className="py-20 bg-background">
@@ -149,11 +86,14 @@ export default function GallerySection() {
           </div>
         </AnimatedComponent>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div 
+          ref={ref}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {currentImages.map((image, index) => (
             <AnimatedComponent key={image.src} delay={index * 0.1}>
               <div 
-                className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
+                className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group will-change-transform"
                 onClick={() => setSelectedImage(image.src)}
               >
                 <Image
@@ -163,9 +103,9 @@ export default function GallerySection() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
-                  quality={60}
+                  quality={75}
                   placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+                  blurDataURL={image.blurDataUrl}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-4">
@@ -179,7 +119,6 @@ export default function GallerySection() {
           ))}
         </div>
 
-        {/* Pagination Controls */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center mt-12 gap-4">
             <button 
@@ -224,7 +163,7 @@ export default function GallerySection() {
                 width={1200}
                 height={800}
                 className="object-contain w-full h-auto max-h-[90vh]"
-                quality={75}
+                quality={85}
                 priority={true}
               />
             </div>

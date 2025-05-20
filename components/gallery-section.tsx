@@ -7,35 +7,85 @@ import { AnimatedComponent } from '@/components/animated-component';
 
 const galleryImages = [
   {
-    src: "https://images.pexels.com/photos/2354073/pexels-photo-2354073.jpeg",
+    src: "/images/perfor/perfor1-min.JPG",
     alt: "Lion dance performers in colorful costumes",
-    category: "events"
+    category: "performances"
   },
   {
-    src: "https://images.unsplash.com/photo-1661261979056-14986bae5b8f?q=80&w=2081&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/images/perfor/perfor2-min.JPG",
     alt: "Close-up of a traditional lion head", 
-    category: "events"
+    category: "performances"
   },
   {
-    src: "https://images.unsplash.com/photo-1661261978957-1b7191277dc0?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/images/perfor/perfor3-min.JPG",
+    alt: "Close-up of a traditional lion head", 
+    category: "performances"
+  },
+  {
+    src: "/images/perfor/perfor4-min.JPG",
+    alt: "Close-up of a traditional lion head", 
+    category: "performances"
+  },
+  {
+    src: "/images/perfor/perfor5-min.JPG",
+    alt: "Close-up of a traditional lion head", 
+    category: "performances"
+  },
+  {
+    src: "/images/perfor/perfor6-min.JPG",
+    alt: "Close-up of a traditional lion head", 
+    category: "performances"
+  },
+  {
+    src: "/images/perfor/perfor7-min.JPG",
+    alt: "Close-up of a traditional lion head", 
+    category: "performances"
+  },
+  {
+    src: "/images/perfor/perfor8-min.JPG",
+    alt: "Close-up of a traditional lion head", 
+    category: "performances"
+  },
+  {
+    src: "/images/perfor/perfor9-min.JPG",
     alt: "Lion dance team performing",
-    category: "events"
+    category: "performances"
   },
   {
-    src: "https://images.unsplash.com/photo-1675784061303-576f0dd0157e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/images/perfor/perfor10-min.JPG",
     alt: "Lion dance at a cultural festival",
-    category: "events"
+    category: "performances"
   },
   {
-    src: "https://images.unsplash.com/photo-1644097219198-a9ca9ae46352?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/images/perfor/perfor11-min.JPG",
+    alt: "Close-up of a traditional lion head", 
+    category: "performances"
+  },
+  {
+    src: "/images/perfor/perfor12-min.JPG",
     alt: "Lion dance team during training",
     category: "training"
   },
   {
-    src: "https://images.pexels.com/photos/15473417/pexels-photo-15473417/free-photo-of-two-chinese-dragons.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    src: "/images/training/train1-min.JPG",
     alt: "Two lion dance costumes at an event",
     category: "training"
-  }
+  },
+  {
+    src: "/images/training/train2-min.JPG",
+    alt: "Two lion dance costumes at an event",
+    category: "training"
+  },
+  {
+    src: "/images/training/train3-min.JPG",
+    alt: "Two lion dance costumes at an event",
+    category: "training"
+  },
+  {
+    src: "/images/training/train4-min.JPG",
+    alt: "Two lion dance costumes at an event",
+    category: "training"
+  },
 ];
 
 export default function GallerySection() {
@@ -60,7 +110,7 @@ export default function GallerySection() {
 
         <AnimatedComponent delay={0.2}>
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-            {["all", "events", "training"].map((filter) => (
+            {["all", "performances", "training"].map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
@@ -89,6 +139,10 @@ export default function GallerySection() {
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                  quality={60}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-4">
@@ -120,6 +174,8 @@ export default function GallerySection() {
                 width={1200}
                 height={800}
                 className="object-contain w-full h-auto max-h-[90vh]"
+                quality={75}
+                priority={true}
               />
             </div>
           </div>

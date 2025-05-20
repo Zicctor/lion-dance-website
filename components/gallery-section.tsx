@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { X } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatedComponent } from '@/components/animated-component';
 
 const galleryImages = [
@@ -91,10 +91,33 @@ const galleryImages = [
 export default function GallerySection() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const imagesPerPage = 6;
 
   const filteredImages = activeFilter === "all" 
     ? galleryImages 
     : galleryImages.filter(img => img.category === activeFilter);
+
+  const totalPages = Math.ceil(filteredImages.length / imagesPerPage);
+  
+  // Get current images
+  const indexOfLastImage = currentPage * imagesPerPage;
+  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
+  const currentImages = filteredImages.slice(indexOfFirstImage, indexOfLastImage);
+
+  // Change page
+  const goToNextPage = () => {
+    setCurrentPage(currentPage => Math.min(currentPage + 1, totalPages));
+  };
+
+  const goToPrevPage = () => {
+    setCurrentPage(currentPage => Math.max(currentPage - 1, 1));
+  };
+
+  const handleFilterChange = (filter: string) => {
+    setActiveFilter(filter);
+    setCurrentPage(1); // Reset to first page when changing filters
+  };
 
   return (
     <section id="gallery" className="py-20 bg-background">
@@ -113,7 +136,7 @@ export default function GallerySection() {
             {["all", "performances", "training"].map((filter) => (
               <button
                 key={filter}
-                onClick={() => setActiveFilter(filter)}
+                onClick={() => handleFilterChange(filter)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   activeFilter === filter
                     ? 'bg-primary text-white'
@@ -127,7 +150,7 @@ export default function GallerySection() {
         </AnimatedComponent>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredImages.map((image, index) => (
+          {currentImages.map((image, index) => (
             <AnimatedComponent key={image.src} delay={index * 0.1}>
               <div 
                 className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
@@ -155,6 +178,33 @@ export default function GallerySection() {
             </AnimatedComponent>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center mt-12 gap-4">
+            <button 
+              onClick={goToPrevPage} 
+              disabled={currentPage === 1}
+              className={`p-2 rounded-full ${currentPage === 1 ? 'text-gray-400 cursor-not-allowed' : 'text-primary hover:bg-primary/10'}`}
+              aria-label="Previous page"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            
+            <div className="text-sm font-medium">
+              Page {currentPage} of {totalPages}
+            </div>
+            
+            <button 
+              onClick={goToNextPage} 
+              disabled={currentPage === totalPages}
+              className={`p-2 rounded-full ${currentPage === totalPages ? 'text-gray-400 cursor-not-allowed' : 'text-primary hover:bg-primary/10'}`}
+              aria-label="Next page"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
+        )}
 
         {selectedImage && (
           <div 

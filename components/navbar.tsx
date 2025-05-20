@@ -36,17 +36,20 @@ export default function Navbar() {
         isScrolled ? 'glass shadow-lg py-2' : 'bg-transparent py-4'
       }`}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-playfair text-2xl font-bold text-gradient">
-            Au Lac
-          </span>
-          <span className="font-playfair text-xl text-white/90">Lion Dance</span>
-        </Link>
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Logo on left */}
+        <div className="flex-shrink-0">
+          <Link href="/" className="flex items-center gap-2">
+            <span className="font-playfair text-2xl font-bold text-gradient">
+              Au Lac
+            </span>
+            <span className="font-playfair text-xl text-white/90">Lion Dance</span>
+          </Link>
+        </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          <nav className="flex gap-6">
+        {/* Desktop Navigation - Centered */}
+        <div className="hidden md:block flex-grow text-center">
+          <nav className="inline-flex justify-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -57,43 +60,28 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
+        </div>
 
-          <div className="flex items-center gap-6">
-            <a 
-              href="mailto:Aulacmualan@gmail.com" 
-              className="text-white/80 hover:text-red-500 transition-colors flex items-center gap-2"
-            >
-              <Mail className="h-4 w-4" />
-              <span className="hidden lg:inline">Aulacmualan@gmail.com</span>
-            </a>
-            <a 
-              href="tel:937-993-6511" 
-              className="text-white/80 hover:text-red-500 transition-colors flex items-center gap-2"
-            >
-              <Phone className="h-4 w-4" />
-              <span className="hidden lg:inline">937-993-6511</span>
-            </a>
-            <div className="flex items-center gap-4">
-              <a 
-                href="https://www.instagram.com/aulaclions/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-red-500 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-red-500 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
+        {/* Social Icons on right */}
+        <div className="hidden md:flex items-center gap-6 flex-shrink-0">
+          <a 
+            href="https://www.instagram.com/aulaclions/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/80 hover:text-red-500 transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram className="h-5 w-5" />
+          </a>
+          <a 
+            href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/80 hover:text-red-500 transition-colors"
+            aria-label="Facebook"
+          >
+            <Facebook className="h-5 w-5" />
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -122,23 +110,9 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="flex flex-col gap-4 pt-4">
-              <a 
-                href="mailto:Aulacmualan@gmail.com" 
-                className="text-white/80 hover:text-red-500 transition-colors flex items-center gap-2"
-              >
-                <Mail className="h-4 w-4" />
-                Aulacmualan@gmail.com
-              </a>
-              <a 
-                href="tel:937-993-6511" 
-                className="text-white/80 hover:text-red-500 transition-colors flex items-center gap-2"
-              >
-                <Phone className="h-4 w-4" />
-                937-993-6511
-              </a>
               <div className="flex gap-4">
                 <a 
-                  href="https://instagram.com" 
+                  href="https://www.instagram.com/aulaclions/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white/80 hover:text-red-500 transition-colors"
@@ -147,7 +121,7 @@ export default function Navbar() {
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a 
-                  href="https://facebook.com" 
+                  href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white/80 hover:text-red-500 transition-colors"

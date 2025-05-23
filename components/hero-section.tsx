@@ -9,7 +9,8 @@ import { ShimmerButton } from "@/components/magicui/shimmer-button";
 
 const backgroundImages = [
   "images/hero/hero1-min.JPG",
-  "images/hero/hero2-min.JPG",
+  "images/perfor/perfor10-min.JPG",
+  "images/hero/hero4-min.JPG",
   "images/hero/hero3-min.JPG",
 ];
 

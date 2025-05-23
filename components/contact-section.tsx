@@ -29,7 +29,7 @@ export default function ContactSection() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Contact Us</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get in touch to book a performance
+            Reach out to book an unforgettable performance or explore opportunities to join our dynamic team
             </p>
           </div>
         </AnimatedComponent>
@@ -39,7 +39,7 @@ export default function ContactSection() {
             <Card className="overflow-hidden">
               <CardContent className="p-0">
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-6">Book a Performance</h3>
+                  <h3 className="text-2xl font-bold mb-6">Book a Performance/ Join our team</h3>
                   
                   <form action="https://submit-form.com/uXQlYezyZ" className="space-y-4">
                     <input type="hidden" name="formType" value="booking" />

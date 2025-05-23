@@ -35,7 +35,7 @@ export default function JoinSection() {
                     <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
                       <li>Learn traditional lion dance movements and techniques</li>
                       <li>Perform at various events throughout the year</li>
-                      <li>Participate in acrobatic training and pole work</li>
+                      <li>Participate in instrument training and musical skill development</li>
                       <li>Help maintain lion dance costumes and equipment</li>
                     </ul>
                   </div>
@@ -43,7 +43,6 @@ export default function JoinSection() {
                   <div>
                     <h4 className="font-medium mb-2">Requirements:</h4>
                     <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-                      <li>Good physical fitness and stamina</li>
                       <li>Commitment to regular practice sessions</li>
                       <li>Team-oriented mindset</li>
                       <li>Interest in Vietnamese - Chinese cultural traditions</li>

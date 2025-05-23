@@ -11,7 +11,7 @@ import {
 const faqs = [
   {
     question: "How far in advance should I book?",
-    answer: "We recommend booking at least 4–6 weeks in advance, especially for popular dates such as Lunar New Year. Rush bookings may be accommodated depending on availability. Additional travel fees may apply based on distance and location."
+    answer: "We recommend booking at least 4–6 weeks in advance, especially for popular dates such as Lunar New Year. Rush bookings may be accommodated depending on availability. Additional travel fees may apply based on distance and location. Kindly be advised that bookings made fewer than four weeks prior to the scheduled event will be subject to a late booking fee, in acknowledgment of the dedication and preparation invested by our members."
   },
   {
     question: "What areas do you serve?",

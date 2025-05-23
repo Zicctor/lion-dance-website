@@ -65,7 +65,7 @@ export default function ContactSection() {
                       </div>
                       
                       <div className="space-y-2">
-                        <Label htmlFor="date">Event Date</Label>
+                        <Label htmlFor="date">Preferred Date</Label>
                         <Popover>
                           <PopoverTrigger asChild>
                             <Button
@@ -96,7 +96,7 @@ export default function ContactSection() {
                       <Textarea 
                         id="message" 
                         name="message"
-                        placeholder="Tell us about your event, location, and any specific requirements..."
+                        placeholder="Tell us about your event, location, and any specific requirements... or reason for joining our team"
                         rows={5} 
                         required 
                       />

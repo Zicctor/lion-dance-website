@@ -1,55 +1,10 @@
 "use client";
 
-import { useState, ChangeEvent, FormEvent, ReactElement } from 'react';
 import { AnimatedComponent } from '@/components/animated-component';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  reason: string;
-  preferredDate: string;
-}
-
-export default function JoinSection(): ReactElement {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    reason: '',
-    preferredDate: ''
-  });
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-    const { name, value } = e.target;
-    setFormData((prev: FormData) => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can add your form submission logic here
-    alert('Thank you for your interest! We will contact you soon.');
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      reason: '',
-      preferredDate: ''
-    });
-  };
-
+export default function JoinSection() {
   return (
     <section id="join" className="py-20 bg-primary/5 relative overflow-hidden">
       <div className="container mx-auto px-4">
@@ -64,7 +19,7 @@ export default function JoinSection(): ReactElement {
           </div>
         </AnimatedComponent>
 
-        <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-8">
+        <div className="max-w-2xl mx-auto">
           <AnimatedComponent>
             <Card>
               <CardHeader>
@@ -98,89 +53,9 @@ export default function JoinSection(): ReactElement {
               </CardContent>
               <CardFooter>
                 <Button asChild className="w-full">
-                  <a href="https://www.instagram.com/aulaclions/" target="_blank" rel="noopener noreferrer">Contact us directly</a>
+                  <a href="#contact">Apply as Performer</a>
                 </Button>
               </CardFooter>
-            </Card>
-          </AnimatedComponent>
-
-          <AnimatedComponent>
-            <Card>
-              <CardHeader>
-                <CardTitle>Join Application</CardTitle>
-                <CardDescription>
-                  Fill out this form to express your interest in joining our lion dance team
-                </CardDescription>
-              </CardHeader>
-              <form onSubmit={handleSubmit}>
-                <CardContent className="space-y-4">
-                  <div>
-                    <Label htmlFor="name">Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      placeholder="(123) 456-7890"
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="reason">Why do you want to join? (Optional)</Label>
-                    <Textarea
-                      id="reason"
-                      name="reason"
-                      value={formData.reason}
-                      onChange={handleInputChange}
-                      placeholder="Tell us what motivates you to join our lion dance team..."
-                      rows={3}
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="preferredDate">Preferred Start Date (Optional)</Label>
-                    <Input
-                      id="preferredDate"
-                      name="preferredDate"
-                      type="date"
-                      value={formData.preferredDate}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button type="submit" className="w-full">
-                    Submit Application
-                  </Button>
-                </CardFooter>
-              </form>
             </Card>
           </AnimatedComponent>
         </div>

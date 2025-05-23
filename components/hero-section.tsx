@@ -65,24 +65,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-primary/20 z-10"></div>
 
       <div className="relative z-20 container mx-auto px-4 flex flex-col items-center text-center">
-      <AnimatedComponent delay={0.1}>
+        <AnimatedComponent delay={0.1}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-            <span className="block mb-4">
-              <AnimatedGradientText 
-                colorFrom="#FFD700" 
-                colorTo="#DC143C"
-              >
-                Au Lac Lion Association
-              </AnimatedGradientText>
-            </span>
-            <span className="block">
-              <AnimatedGradientText 
-                colorFrom="#50C878" 
-                colorTo="#7851A9"
-              >
-                Đội Lân Âu Lạc
-              </AnimatedGradientText>
-            </span>
+            <span className="block mb-4 "><AnimatedGradientText>Au Lac Lion Association</AnimatedGradientText></span>
+            <span className="block"><AnimatedGradientText>Đội Lân Âu Lạc</AnimatedGradientText></span>
           </h1>
         </AnimatedComponent>
         <AnimatedComponent delay={0.3}>

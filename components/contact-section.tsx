@@ -102,7 +102,7 @@ export default function ContactSection() {
                       />
                     </div>
                     
-                    <div className="cf-turnstile" data-sitekey="0x4AAAAAABdFGr6GqfkAEI_A" data-theme="light"></div>
+                    <div className="cf-turnstile" data-sitekey="0x4AAAAAABf5_zB2sWjEDK7W" data-theme="light"></div>
                     
                     <Button 
                       type="submit" 

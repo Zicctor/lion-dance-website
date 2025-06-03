@@ -15,6 +15,14 @@ export default function Footer() {
           </div>
 
           {/* Social Icons */}
+          <div className="flex space-x-4">
+            <a href="https://www.instagram.com/aulaclions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <Instagram className="text-white hover:text-red-400 transition-colors w-6 h-6" />
+            </a>
+            <a href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <Facebook className="text-white hover:text-blue-500 transition-colors w-6 h-6" />
+            </a>
+          </div>
           {/* Copyright */}
           <p className="text-white/60 text-sm">
             © {new Date().getFullYear()} Au Lac Lion Dance. All rights reserved.

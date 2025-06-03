@@ -17,10 +17,10 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex space-x-4">
             <a href="https://www.instagram.com/aulaclions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <Instagram className="text-white hover:text-red-400 transition-colors w-6 h-6" />
+              <Instagram className="text-white/80 hover:text-red-400 transition-colors w-5 h-5" />
             </a>
             <a href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <Facebook className="text-white hover:text-blue-500 transition-colors w-6 h-6" />
+              <Facebook className="text-white/80 hover:text-blue-500 transition-colors w-5 h-5" />
             </a>
           </div>
           {/* Copyright */}

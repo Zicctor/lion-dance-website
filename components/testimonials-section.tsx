@@ -15,6 +15,12 @@ const testimonials = [
     image: "images/testimonial/sandra.jpg",
     quote: "Since Au Lac has been founded, they’ve consistently been performing for ASA! Each performance has been a step up from the last, showcasing their growth and tenacity. Everyone who attended our AAPI culture night loved their act and who they are as people. Au Lac is a great group to work and interact with. We will continue to work with them in the future!",
   },
+  {
+    name: "Dien Nguyen",
+    role: "Gradution party",
+    image: "images/testimonial/dien.jpg",
+    quote: "We had Au Lac lions perform for our son's graduation party, and they did not disppoint. All of the parents were recording and all of the kids were ecstatic. Their performance is what we needed to really bring out the good luck and energy for our party.",
+  }
 ];
 
 export default function TestimonialsSection() {

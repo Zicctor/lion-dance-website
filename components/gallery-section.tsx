@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatedComponent } from '@/components/animated-component';
@@ -118,11 +118,27 @@ const galleryImages = [
   },
 ];
 
+// Custom hook to get window width
+function useWindowWidth() {
+  const [width, setWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return width;
+}
+
 export default function GallerySection() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 6;
+  const windowWidth = useWindowWidth();
+  const imagesPerPage = windowWidth <= 640 ? 3 : 6;
 
   const { ref, inView } = useInView({
     threshold: 0.1,

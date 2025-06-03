@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Au Lac | Lion Dance Team',
     description: 'Traditional lion dance performances for events and celebrations',
-    url: 'https://www.aulaclions.com/',
+    url: 'https://www.aulaclions.com/images/hero/hero4-min.JPG',
     siteName: 'Au Lac Lion Dance',
     images: [
       {

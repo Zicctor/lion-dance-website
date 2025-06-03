@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
         setCurrentIndex((prev) => (prev + 1) % testimonials.length);
         setIsTransitioning(false);
       }, 300);
-    }, 3000);
+    }, 15000);
 
     return () => clearInterval(timer);
   }, []);

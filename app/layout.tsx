@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import { ThemeProvider } from '@/components/theme-provider';
 import { StickyBanner } from '@/components/sticky-banner';
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import FollowPointerTopButton from "@/components/follow-pointer-top-button";
 
 // Dynamically import components that might use browser APIs
 const Navbar = dynamic(() => import('@/components/navbar'), {
@@ -64,6 +65,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <FollowPointerTopButton />
         <SpeedInsights />
       </body>
     </html>

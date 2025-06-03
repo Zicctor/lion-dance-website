@@ -10,29 +10,11 @@ import { ShimmerButton } from '@/components/magicui/shimmer-button';
 
 const testimonials = [
   {
-    name: "Sarah & Michael Chen",
-    role: "Wedding Couple",
-    image: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg",
-    quote: "The lion dance performance made our wedding truly unforgettable. The energy and skill of the performers had everyone mesmerized. It was the highlight of our celebration!",
+    name: "Sandra Lam",
+    role: "President of ASA",
+    image: "images/testimonial/sandra.jpg",
+    quote: "Since Au Lac has been founded, they’ve consistently been performing for ASA! Each performance has been a step up from the last, showcasing their growth and tenacity. Everyone who attended our AAPI culture night loved their act and who they are as people. Au Lac is a great group to work and interact with. We will continue to work with them in the future!",
   },
-  {
-    name: "David Wong",
-    role: "Restaurant Owner",
-    image: "https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg",
-    quote: "Having Au Lac perform at our grand opening brought us incredible luck. The performance was spectacular and drew a huge crowd. Our business has been thriving ever since!",
-  },
-  {
-    name: "Emily Martinez",
-    role: "Cultural Festival Organizer",
-    image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
-    quote: "Au Lac Lion Dance Team has been the highlight of our festival for three years running. Their performances are always dynamic, authentic, and absolutely captivating.",
-  },
-  {
-    name: "James & Linda Thompson",
-    role: "Corporate Event Planners",
-    image: "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg",
-    quote: "The team's professionalism and attention to detail impressed everyone. They created an amazing atmosphere that perfectly balanced tradition with entertainment.",
-  }
 ];
 
 export default function TestimonialsSection() {

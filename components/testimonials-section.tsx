@@ -12,19 +12,19 @@ const testimonials = [
   {
     name: "Sandra Lam",
     role: "President of ASA",
-    image: "images/testimonial/sandra.jpg",
+    image: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772238/ftxlkktivzokvrybwcra.jpg",
     quote: "Since Au Lac has been founded, they’ve consistently been performing for ASA! Each performance has been a step up from the last, showcasing their growth and tenacity. Everyone who attended our AAPI culture night loved their act and who they are as people. Au Lac is a great group to work and interact with. We will continue to work with them in the future!",
   },
   {
     name: "Dien Nguyen",
     role: "Gradution party",
-    image: "images/testimonial/dien.jpg",
+    image: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772236/vp7a29mkrgjk3nqkhhxz.jpg",
     quote: "We had Au Lac lions perform for our son's graduation party, and they did not disppoint. All of the parents were recording and all of the kids were ecstatic. Their performance is what we needed to really bring out the good luck and energy for our party.",
   },
   {
     name: "Joey Nguyen",
     role: "Beavercreek High School International Club president",
-    image: "images/testimonial/joey.jpg",
+    image: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772237/d6gnv8yxwoo31xucs777.jpg",
     quote: "At Beavercreek Highschool, My international club holds a district wide fair every year with many exciting performances including au lac lions. Lion dancing isn’t very common around Dayton so the crowd went crazy over their dynamic dancing styles. Their authenticity allowed the crowd to appreciate the Vietnamese culture, which was exactly what our international fair is aiming for. We will definitely invite them next year for another thrilling performance.",
   }
 ];

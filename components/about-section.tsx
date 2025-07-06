@@ -17,7 +17,7 @@ export default function AboutSection() {
           <AnimatedComponent animation="fadeInLeft">
             <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
               <Image
-                src="/images/about/about-min.JPG"
+                src="https://res.cloudinary.com/du9fgslde/image/upload/v1751772236/o4kp4soakyl4xcie2e06.jpg"
                 alt="Lion Dance Performers"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

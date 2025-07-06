@@ -2,16 +2,18 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Instagram } from 'lucide-react';
 import { AnimatedComponent } from '@/components/animated-component';
 import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
+import { CldImage as CldImageDefault, CldImageProps }  from 'next-cloudinary';
+import { getCldOgImageUrl } from 'next-cloudinary';
+
 
 const backgroundImages = [
-  "images/hero/hero1-min.JPG",
-  "images/hero/hero2-min.JPG",
-  "images/hero/hero4-min.JPG",
-  "images/hero/hero3-min.JPG",
+  "https://res.cloudinary.com/du9fgslde/image/upload/v1751772136/dfsxhppycqqub5aik3af.jpg",
+  "https://res.cloudinary.com/du9fgslde/image/upload/v1751772136/j0av0wqybdlg8smlvlea.jpg",
+  "https://res.cloudinary.com/du9fgslde/image/upload/v1751772135/fenoidlxwvvedexab4av.jpg",
+  "https://res.cloudinary.com/du9fgslde/image/upload/v1751772135/dqixm1kkvqxe2fo4lxzg.jpg",
 ];
 
 export default function HeroSection() {

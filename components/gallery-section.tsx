@@ -126,19 +126,19 @@ const galleryImages = [
     src: "https://res.cloudinary.com/du9fgslde/image/upload/v1756963123/ldqzuwx4ffhkqth3od5c.jpg",
     alt: "", 
     category: "members",
-    blurDataUrl: "."
+    blurDataUrl: "..."
   },
   {
     src: "https://res.cloudinary.com/du9fgslde/image/upload/v1756963123/hxxlhydluhwtwxib6v8g.jpg",
     alt: "", 
     category: "members",
-    blurDataUrl: "."
+    blurDataUrl: "..."
   },
   {
     src: "https://res.cloudinary.com/du9fgslde/image/upload/v1756963119/mzahlscketriq643pic3.jpg",
     alt: "", 
     category: "members",
-    blurDataUrl: "."
+    blurDataUrl: "..."
   },
 ];
 

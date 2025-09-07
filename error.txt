@@ -1,0 +1,24 @@
+Failed to compile.
+
+./components/notification-popup.tsx
+Error:
+  × Unexpected token `AlertDialog`. Expected jsx identifier
+    ╭─[Z:\Websites\lion-dance-website\components\notification-popup.tsx:51:1]
+ 51 │   const paragraphs = notificationContent.split('\n\n');
+ 52 │
+ 53 │   return (
+ 54 │     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
+ 55 │       <AlertDialogContent className="max-w-2xl z-[70]">
+ 56 │         <AlertDialogHeader>
+ 56 │           <div className="flex justify-between items-center">
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/notification-popup.tsx
+./app/layout.tsx
+
+
+> Build failed because of webpack errors

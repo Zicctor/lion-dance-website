@@ -12,39 +12,32 @@ import {
 
 const notificationContent = `Dear Valued Customers,
 
-We hope this message finds you in good health and high spirits! We are thrilled to announce some exciting updates to our traditional lion dance services that will enhance your experience with us.
+We hope this message finds you well! We’re excited to share some important updates to our lion dance services.
 
-To maintain our commitment to excellence and continue investing in cutting-edge performance techniques and comprehensive training for our talented performers, we have made the strategic decision to update our pricing structure, effective August 9th, 2025.
+To continue investing in training and performance excellence, we will be updating our pricing structure effective August 9, 2025. Rest assured, this adjustment reflects our commitment to offering the most authentic and memorable performances.
 
-We recognize that pricing adjustments may raise questions, and we want to assure you that this decision reflects our dedication to delivering the most authentic and memorable lion dance performances possible.
+As a thank you for your loyalty, all bookings with a deposit made before August 9, 2025 will keep the current pricing. Please note: consultations without a deposit will follow the new pricing. Events scheduled on or before this date will not be affected.
 
-As a token of our appreciation for your continued loyalty and support, we are pleased to offer an exclusive grandfather pricing benefit. All lion dance bookings placed before August 9th, 2025, will maintain their original pricing structure.
+We appreciate your trust and support as we work to preserve and elevate this cultural tradition. For any questions, please contact us directly.
 
-Please note that this pricing update will take effect immediately following the date specified above. Any events already scheduled for August 9th, 2025, or earlier will not be impacted by these changes.
+Thank you for being part of the Au Lac Lion family—we look forward to celebrating with you!
 
-We sincerely appreciate your understanding and continued trust in our services as we strive to preserve and elevate this beautiful cultural tradition.
+Warm regards,
 
-Should you have any questions or require clarification, please don't hesitate to contact our dedicated customer service team at [contact information]. We're always here to help!
-
-Thank you for being an integral part of our Au Lac Lion family. Together, we look forward to creating unforgettable moments and celebrating life's special occasions.
-
-With warmest regards and gratitude,
-
-Phuong An Le
-Au Lac Lion Dance Troupe`;
+Au Lac Lion Association`;
 
 const NotificationPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // const hasSeenPopup = localStorage.getItem("hasSeenNotification");
-    // if (!hasSeenPopup) {
+    const hasSeenPopup = localStorage.getItem("hasSeenNotification");
+    if (!hasSeenPopup) {
       setIsOpen(true);
-    // }
+    }
   }, []);
 
   const handleClose = () => {
-    // localStorage.setItem("hasSeenNotification", "true");
+    localStorage.setItem("hasSeenNotification", "true");
     setIsOpen(false);
   };
 
@@ -56,8 +49,8 @@ const NotificationPopup = () => {
         <AlertDialogHeader>
           <div className="flex justify-between items-center">
             <AlertDialogTitle className="text-red-800">Important Update</AlertDialogTitle>
-            <button onClick={handleClose} className="p-2 rounded-full hover:bg-gray-200">
-              <X className="h-5 w-5" />
+            <button onClick={handleClose} className="p-2 rounded-full hover:bg-red-100 transition-colors">
+              <X className="h-5 w-5 text-red-600 hover:text-red-800 transition-colors" />
             </button>
           </div>
           <AlertDialogDescription asChild>
@@ -70,7 +63,9 @@ const NotificationPopup = () => {
             </div>
           </AlertDialogDescription>
         </AlertDialogHeader>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 };
 
-export default NotificationPopup;
+export default NotificationPopup; 

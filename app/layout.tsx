@@ -7,6 +7,9 @@ import { StickyBanner } from '@/components/sticky-banner';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import FollowPointerTopButton from "@/components/follow-pointer-top-button";
 import { Analytics } from '@vercel/analytics/next';
+const NotificationPopup = dynamic(() => import('@/components/notification-popup'), {
+  ssr: false,
+});
 
 // Dynamically import components that might use browser APIs
 const Navbar = dynamic(() => import('@/components/navbar'), {
@@ -69,6 +72,7 @@ export default function RootLayout({
         <FollowPointerTopButton />
         <SpeedInsights />
         <Analytics />
+        <NotificationPopup />
       </body>
     </html>
   );

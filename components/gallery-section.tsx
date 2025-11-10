@@ -6,141 +6,47 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatedComponent } from '@/components/animated-component';
 import { useInView } from 'react-intersection-observer';
 
+const CLOUDINARY_BASE = "https://res.cloudinary.com/du9fgslde/image/upload";
+
 const galleryImages = [
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772234/m7czc3wngvhe8maei6yc.jpg",
-    alt: "",
-    category: "performances",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772234/nzuihd6lgkhviu9xafxl.jpg",
-    alt: "", 
-    category: "performances",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772224/tfe2r02wu6k9bx2qwbeu.jpg",
-    alt: "",
-    category: "performances",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772221/rqyjhirkjnvjk8msrsnu.jpg",
-    alt: "", 
-    category: "performances",
-    blurDataUrl: "."
-  },  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772219/ebyqerie09se5qxrt1d9.jpg",
-    alt: "",
-    category: "performances",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772181/zyw50ekhtowembqmm6kj.jpg",
-    alt: "", 
-    category: "performances",
-    blurDataUrl: "."
-  },  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772161/trhfzd0z6kkvq32mhln5.jpg",
-    alt: "",
-    category: "performances",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772138/vafhqbzpgkpbvvgyz3z1.jpg",
-    alt: "", 
-    category: "performances",
-    blurDataUrl: "."
-  },  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772138/z2memf5kcev7guuwliu4.jpg",
-    alt: "- costumes",
-    category: "performances",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772137/blibi9cxsedunzadxsq4.jpg",
-    alt: "", 
-    category: "all",
-    blurDataUrl: "."
-  },  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772138/uu1ncil9pirgshshscae.jpg",
-    alt: "",
-    category: "performances",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772135/dhns0vzw0viem2lqtjoy.jpg",
-    alt: "", 
-    category: "performances",
-    blurDataUrl: "."
-  },  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772135/jniqqaitmclhne6w4y38.jpg",
-    alt: "",
-    category: "performances",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772235/wrop8ynfokxca6ayohwy.jpg",
-    alt: "", 
-    category: "training",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772235/qie0x1aorpyaepfmyitt.jpg",
-    alt: "", 
-    category: "training",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772234/fnqgqe16pos3mmcvzqvv.jpg",
-    alt: "", 
-    category: "training",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772234/tkrlbhtxfsxcfthb1zuq.jpg",
-    alt: "", 
-    category: "training",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772242/wgmrbt8bpgvqy1sf6zc7.jpg",
-    alt: "", 
-    category: "all",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1756963127/dt0gma1ejtk7bwtmmhka.jpg",
-    alt: "", 
-    category: "members",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1756963124/tisml7zxrrnbeydzb1ht.jpg",
-    alt: "", 
-    category: "members",
-    blurDataUrl: "."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1756963123/ldqzuwx4ffhkqth3od5c.jpg",
-    alt: "", 
-    category: "members",
-    blurDataUrl: "..."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1756963123/hxxlhydluhwtwxib6v8g.jpg",
-    alt: "", 
-    category: "members",
-    blurDataUrl: "..."
-  },
-  {
-    src: "https://res.cloudinary.com/du9fgslde/image/upload/v1756963119/mzahlscketriq643pic3.jpg",
-    alt: "", 
-    category: "members",
-    blurDataUrl: "..."
-  },
-];
+  { id: "v1751772234/m7czc3wngvhe8maei6yc", category: "performances" },
+  { id: "v1751772234/nzuihd6lgkhviu9xafxl", category: "performances" },
+  { id: "v1751772224/tfe2r02wu6k9bx2qwbeu", category: "performances" },
+  { id: "v1751772221/rqyjhirkjnvjk8msrsnu", category: "performances" },
+  { id: "v1751772219/ebyqerie09se5qxrt1d9", category: "performances" },
+  { id: "v1751772181/zyw50ekhtowembqmm6kj", category: "performances" },
+  { id: "v1751772161/trhfzd0z6kkvq32mhln5", category: "performances" },
+  { id: "v1751772138/vafhqbzpgkpbvvgyz3z1", category: "performances" },
+  { id: "v1751772138/z2memf5kcev7guuwliu4", category: "performances", alt: "- costumes" },
+  { id: "v1751772138/uu1ncil9pirgshshscae", category: "performances" },
+  { id: "v1751772135/dhns0vzw0viem2lqtjoy", category: "performances" },
+  { id: "v1751772135/jniqqaitmclhne6w4y38", category: "performances" },
+  { id: "v1762746544/vuqbqvz7m8s8nf5ovrae", category: "performances" },
+  { id: "v1762746490/y41nesfid32jscv6nmyf", category: "performances" },
+  { id: "v1762746255/awgcdiu4fzubn4vsafuu", category: "performances" },
+  { id: "v1762746254/iymhiemmduccxm7girau", category: "performances" },
+  { id: "v1762746254/byvgupoogrqkhp3kpxvh", category: "performances" },
+  { id: "v1751772235/wrop8ynfokxca6ayohwy", category: "training" },
+  { id: "v1751772235/qie0x1aorpyaepfmyitt", category: "training" },
+  { id: "v1751772234/fnqgqe16pos3mmcvzqvv", category: "training" },
+  { id: "v1751772234/tkrlbhtxfsxcfthb1zuq", category: "training" },
+  { id: "v1756963127/dt0gma1ejtk7bwtmmhka", category: "members" },
+  { id: "v1756963124/tisml7zxrrnbeydzb1ht", category: "members" },
+  { id: "v1756963123/ldqzuwx4ffhkqth3od5c", category: "members" },
+  { id: "v1756963123/hxxlhydluhwtwxib6v8g", category: "members" },
+  { id: "v1756963119/mzahlscketriq643pic3", category: "members" },
+  { id: "v1762745224/ughtvxgxp5gj2iccsh4w", category: "members" },
+  { id: "v1762745224/rdrk723dbcyyudtnusnq", category: "members" },
+  { id: "v1762745224/qjesq6szc5jsrirydv1p", category: "members" },
+  { id: "v1762745224/drov3vyfmmc1oy12qwpu", category: "members" },
+  { id: "v1751772243/zn6dlzpyp7nt5t82rlwn", category: "all" },
+  { id: "v1751772242/wgmrbt8bpgvqy1sf6zc7", category: "all" },
+].map(img => ({
+  src: `${CLOUDINARY_BASE}/${img.id}.jpg`,
+  alt: img.alt || "",
+  category: img.category,
+  blurDataUrl: "."
+}));
 
 // Custom hook to get window width
 function useWindowWidth() {

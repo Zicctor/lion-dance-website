@@ -42,10 +42,10 @@ const galleryImages = [
   { id: "v1751772243/zn6dlzpyp7nt5t82rlwn", category: "all" },
   { id: "v1751772242/wgmrbt8bpgvqy1sf6zc7", category: "all" },
 ].map(img => ({
-  src: `${CLOUDINARY_BASE}/${img.id}.jpg`,
+  src: `${CLOUDINARY_BASE}/c_fill,w_600,h_450,f_auto,q_auto/${img.id}.jpg`,
   alt: img.alt || "",
   category: img.category,
-  blurDataUrl: "."
+  blurDataUrl: `${CLOUDINARY_BASE}/c_fill,w_20,h_15,f_auto,q_auto,e_blur:1000/${img.id}.jpg`
 }));
 
 // Custom hook to get window width
@@ -132,33 +132,39 @@ export default function GallerySection() {
           ref={ref}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {currentImages.map((image, index) => (
-            <AnimatedComponent key={image.src} delay={index * 0.1}>
-              <div 
-                className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group will-change-transform"
-                onClick={() => setSelectedImage(image.src)}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                  quality={75}
-                  placeholder="blur"
-                  blurDataURL={image.blurDataUrl}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <div className="p-4">
-                    <span className="text-white font-medium text-sm">
-                      {image.alt}
-                    </span>
+          {currentImages.map((image, index) => {
+            const isFirstPage = currentPage === 1;
+            const isPriorityImage = isFirstPage && index < 3;
+            
+            return (
+              <AnimatedComponent key={image.src} delay={index * 0.05}>
+                <div 
+                  className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group will-change-transform"
+                  onClick={() => setSelectedImage(image.src.replace('/c_fill,w_600,h_450,f_auto,q_auto/', '/c_fill,w_1200,h_900,f_auto,q_auto/'))}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading={isPriorityImage ? "eager" : "lazy"}
+                    priority={isPriorityImage}
+                    quality={60}
+                    placeholder="blur"
+                    blurDataURL={image.blurDataUrl}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <div className="p-4">
+                      <span className="text-white font-medium text-sm">
+                        {image.alt}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </AnimatedComponent>
-          ))}
+              </AnimatedComponent>
+            );
+          })}
         </div>
 
         {totalPages > 1 && (
@@ -193,7 +199,7 @@ export default function GallerySection() {
             onClick={() => setSelectedImage(null)}
           >
             <button 
-              className="absolute top-4 right-4 text-white p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+              className="absolute top-4 right-4 text-white p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors z-10"
               onClick={() => setSelectedImage(null)}
             >
               <X size={24} />
@@ -203,10 +209,12 @@ export default function GallerySection() {
                 src={selectedImage}
                 alt="Enlarged gallery image"
                 width={1200}
-                height={800}
+                height={900}
                 className="object-contain w-full h-auto max-h-[90vh]"
-                quality={85}
+                quality={80}
                 priority={true}
+                placeholder="blur"
+                blurDataURL={selectedImage.replace('/c_fill,w_1200,h_900,f_auto,q_auto/', '/c_fill,w_20,h_15,f_auto,q_auto,e_blur:1000/')}
               />
             </div>
           </div>

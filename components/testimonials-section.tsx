@@ -26,6 +26,12 @@ const testimonials = [
     role: "Beavercreek High School International Club president",
     image: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772237/d6gnv8yxwoo31xucs777.jpg",
     quote: "At Beavercreek Highschool, My international club holds a district wide fair every year with many exciting performances including au lac lions. Lion dancing isn’t very common around Dayton so the crowd went crazy over their dynamic dancing styles. Their authenticity allowed the crowd to appreciate the Vietnamese culture, which was exactly what our international fair is aiming for. We will definitely invite them next year for another thrilling performance.",
+  },
+  {
+    name:"Tram & Chris ❤️",
+    role: "Wedding",
+    image: "https://media.istockphoto.com/id/527566435/vector/newlyweds.jpg?s=612x612&w=0&k=20&c=VKJigD_2aQGabDlphAWW1QzdnXYmpFxD3HhdPm4xVhA=",
+    quote: "We had an incredible experience with this lion dance team! They were extremely flexible and professional from start to finish. Even when their car unexpectedly broke down on the way to our wedding, they still managed to arrive on time and delivered an amazing performance. Our guests could not stop talking about how energetic, vibrant, and memorable the show was. We are so grateful for their dedication and talent they truly made our celebration unforgettable!",
   }
 ];
 

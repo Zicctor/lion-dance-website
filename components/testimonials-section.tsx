@@ -19,7 +19,7 @@ const testimonials = [
     name: "Dien Nguyen",
     role: "Gradution party",
     image: "https://res.cloudinary.com/du9fgslde/image/upload/v1751772236/vp7a29mkrgjk3nqkhhxz.jpg",
-    quote: "We had Au Lac lions perform for our son's graduation party, and they did not disppoint. All of the parents were recording and all of the kids were ecstatic. Their performance is what we needed to really bring out the good luck and energy for our party.",
+    quote: "We had Au Lac lions perform for our son's graduation party, and they did not disappoint. All of the parents were recording and all of the kids were ecstatic. Their performance is what we needed to really bring out the good luck and energy for our party.",
   },
   {
     name: "Joey Nguyen",

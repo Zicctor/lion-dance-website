@@ -42,7 +42,7 @@ export default function AboutSection() {
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6 font-playfair">Our Mission</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed font-inter">
-                  We strive to promote cultural understanding through captivating lion dance performances, educate communities about this important tradition, and spread joy and good fortune through our energetic shows.
+                  Au Lac Lions seeks to inspire cultural appreciation by honoring the rich tradition of lion dance, providing meaningful educational outreach, and bringing joy and good fortune to the communities we serve.
                 </p>
               </div>
             </div>

@@ -5,17 +5,17 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0D0D0D] border-t border-white/10">
-      <div className="max-w-[1200px] mx-auto px-6 py-4">
-        <div className="flex flex-col items-center space-y-3">
+    <footer className="bg-gradient-to-b from-transparent to-primary/10 border-t border-white/5 py-12">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center space-y-6">
           {/* Brand */}
           <div className="flex flex-col items-center gap-4">
             <Image
               src="/logo.svg"
               alt="Au Lac Logo"
-              width={120}
-              height={120}
-              className="w-28 h-28 drop-shadow-lg"
+              width={160}
+              height={160}
+              className="w-32 h-32"
             />
             <h3 className="font-playfair text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
               Au Lac Lion Dance

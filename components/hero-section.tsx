@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { AnimatedComponent } from '@/components/animated-component';
-import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
-import { CldImage as CldImageDefault, CldImageProps }  from 'next-cloudinary';
+import { CldImage as CldImageDefault, CldImageProps } from 'next-cloudinary';
 import { getCldOgImageUrl } from 'next-cloudinary';
 
+import Image from 'next/image';
 
 const backgroundImages = [
   "https://res.cloudinary.com/du9fgslde/image/upload/v1751772136/dfsxhppycqqub5aik3af.jpg",
@@ -33,7 +33,7 @@ export default function HeroSection() {
       if (!heroRef.current) return;
       const scrollY = window.scrollY;
       const opacity = 1 - scrollY / 700;
-      
+
       if (opacity > 0) {
         heroRef.current.style.opacity = opacity.toString();
         heroRef.current.style.transform = `translateY(${scrollY * 0.3}px)`;
@@ -45,7 +45,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={heroRef}
       className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
     >
@@ -64,14 +64,21 @@ export default function HeroSection() {
       ))}
 
       {/* Overlay with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-primary/20 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-primary/10 z-10"></div>
 
       <div className="relative z-20 container mx-auto px-4 flex flex-col items-center text-center">
         <AnimatedComponent delay={0.1}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-            <span className="block mb-4 "><AnimatedGradientText>Au Lac Lion Association</AnimatedGradientText></span>
-            <span className="block"><AnimatedGradientText>Đội Lân Âu Lạc</AnimatedGradientText></span>
-          </h1>
+          <div className="mb-8">
+            <Image
+              src="/logo.svg"
+              alt="Au Lac Lion Association Logo"
+              width={800}
+              height={800}
+              className="w-64 h-64 sm:w-80 sm:h-80 md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] mx-auto"
+              priority
+            />
+            <h1 className="sr-only">Au Lac Lion Association - Đội Lân Âu Lạc</h1>
+          </div>
         </AnimatedComponent>
         <AnimatedComponent delay={0.3}>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mb-8 drop-shadow-md">
@@ -81,7 +88,7 @@ export default function HeroSection() {
 
         <AnimatedComponent delay={0.5}>
           <div className="flex flex-col sm:flex-row gap-4">
-            <ShimmerButton 
+            <ShimmerButton
               className="shadow-2xl"
               shimmerSize="2px"
               background="black"
@@ -91,9 +98,9 @@ export default function HeroSection() {
                 <a href="#contact">Book a Performance</a>
               </span>
             </ShimmerButton>
-            <Button 
-              variant="outline" 
-              size="lg" 
+            <Button
+              variant="outline"
+              size="lg"
               className="bg-background/10 hover:bg-background/20 backdrop-blur-sm border-white text-white px-8 py-6 text-lg rounded-md"
               asChild
             >

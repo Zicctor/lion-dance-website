@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass shadow-lg py-4' : 'bg-transparent py-8'
+      className={`absolute top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'fixed glass shadow-lg py-4 animation-slide-down' : 'bg-transparent py-8'
         }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -45,7 +45,7 @@ export default function Navbar() {
               alt="Au Lac Logo"
               width={80}
               height={80}
-              className="w-16 h-16 md:w-20 md:h-20 drop-shadow-md transition-transform hover:scale-105"
+              className="w-16 h-16 md:w-20 md:h-20 transition-transform hover:scale-105"
               priority
             />
             <div className="flex flex-col -space-y-1">

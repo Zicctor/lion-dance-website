@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.aulaclions.com'),
   title: 'Au Lac | Lion Dance Team',
   description: 'Traditional lion dance performances for events and celebrations',
+  themeColor: '#CB4055',
   icons: {
     icon: [
       { url: '/logo.svg' },
@@ -73,8 +74,8 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="min-h-screen bg-background antialiased">
         <ThemeProvider attribute="class" defaultTheme="light">
-          <div className="flex min-h-screen flex-col pt-10">
-            <StickyBanner />
+          <StickyBanner />
+          <div className="relative flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />

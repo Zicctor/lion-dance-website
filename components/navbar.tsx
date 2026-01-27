@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`absolute top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'fixed glass shadow-lg py-4 animation-slide-down' : 'bg-transparent py-8'
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass shadow-lg py-4' : 'bg-transparent py-8'
         }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">

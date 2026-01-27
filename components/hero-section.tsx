@@ -47,7 +47,7 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Images */}
       {backgroundImages.map((image, index) => (
@@ -66,15 +66,15 @@ export default function HeroSection() {
       {/* Overlay with gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-primary/10 z-10"></div>
 
-      <div className="relative z-20 container mx-auto px-4 flex flex-col items-center text-center">
+      <div className="relative z-20 container mx-auto px-4 pt-20 flex flex-col items-center text-center">
         <AnimatedComponent delay={0.1}>
-          <div className="mb-8">
+          <div className="h-48 sm:h-64 md:h-[300px] lg:h-[400px] flex items-center justify-center mb-4 md:mb-8 overflow-visible">
             <Image
               src="/logo.svg"
               alt="Au Lac Lion Association Logo"
               width={800}
               height={800}
-              className="w-64 h-64 sm:w-80 sm:h-80 md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] mx-auto"
+              className="w-auto h-[120%] sm:h-[130%] md:h-[140%] max-w-none drop-shadow-[0_0_20px_rgba(0,0,0,0.2)]"
               priority
             />
             <h1 className="sr-only">Au Lac Lion Association - Đội Lân Âu Lạc</h1>

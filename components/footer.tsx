@@ -1,6 +1,7 @@
 "use client";
 
 import { Instagram, Facebook, Mail, Github } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -8,8 +9,15 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-6 py-4">
         <div className="flex flex-col items-center space-y-3">
           {/* Brand */}
-          <div className="text-center">
-            <h3 className="font-playfair text-2xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+          <div className="flex flex-col items-center gap-4">
+            <Image
+              src="/logo.svg"
+              alt="Au Lac Logo"
+              width={120}
+              height={120}
+              className="w-28 h-28 drop-shadow-lg"
+            />
+            <h3 className="font-playfair text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
               Au Lac Lion Dance
             </h3>
           </div>

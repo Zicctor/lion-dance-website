@@ -50,9 +50,12 @@ const galleryImages = [
 
 // Custom hook to get window width
 function useWindowWidth() {
-  const [width, setWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 1200);
+  const [width, setWidth] = useState<number>(1200); // Initialize with a default value
 
   useEffect(() => {
+    // Set width once the component is mounted on the client
+    setWidth(window.innerWidth);
+
     function handleResize() {
       setWidth(window.innerWidth);
     }
@@ -87,12 +90,12 @@ export default function GallerySection() {
     triggerOnce: true
   });
 
-  const filteredImages = activeFilter === "all" 
-    ? galleryImages 
+  const filteredImages = activeFilter === "all"
+    ? galleryImages
     : galleryImages.filter(img => img.category === activeFilter);
 
   const totalPages = Math.ceil(filteredImages.length / imagesPerPage);
-  
+
   const indexOfLastImage = currentPage * imagesPerPage;
   const indexOfFirstImage = indexOfLastImage - imagesPerPage;
   const currentImages = filteredImages.slice(indexOfFirstImage, indexOfLastImage);
@@ -128,11 +131,10 @@ export default function GallerySection() {
               <button
                 key={filter}
                 onClick={() => handleFilterChange(filter)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeFilter === filter
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${activeFilter === filter
                     ? 'bg-primary text-white'
                     : 'bg-secondary/10 text-foreground hover:bg-secondary/20'
-                }`}
+                  }`}
               >
                 {filter.charAt(0).toUpperCase() + filter.slice(1)}
               </button>
@@ -140,17 +142,17 @@ export default function GallerySection() {
           </div>
         </AnimatedComponent>
 
-        <div 
+        <div
           ref={ref}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {currentImages.map((image, index) => {
             const isFirstPage = currentPage === 1;
             const isPriorityImage = isFirstPage && index < 2;
-            
+
             return (
               <AnimatedComponent key={image.src} delay={isPriorityImage ? 0 : index * 0.02}>
-                <div 
+                <div
                   className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
                   onClick={() => setSelectedImage(image.src.replace('/c_fill,w_400,h_300,f_auto,q_auto,dpr_auto/', '/c_fill,w_1000,h_750,f_auto,q_auto,dpr_auto/'))}
                 >
@@ -183,21 +185,21 @@ export default function GallerySection() {
 
         {totalPages > 1 && (
           <div className="flex justify-center items-center mt-12 gap-4">
-            <button 
-              onClick={goToPrevPage} 
+            <button
+              onClick={goToPrevPage}
               disabled={currentPage === 1}
               className={`p-2 rounded-full ${currentPage === 1 ? 'text-gray-400 cursor-not-allowed' : 'text-primary hover:bg-primary/10'}`}
               aria-label="Previous page"
             >
               <ChevronLeft size={24} />
             </button>
-            
+
             <div className="text-sm font-medium">
               Page {currentPage} of {totalPages}
             </div>
-            
-            <button 
-              onClick={goToNextPage} 
+
+            <button
+              onClick={goToNextPage}
               disabled={currentPage === totalPages}
               className={`p-2 rounded-full ${currentPage === totalPages ? 'text-gray-400 cursor-not-allowed' : 'text-primary hover:bg-primary/10'}`}
               aria-label="Next page"
@@ -208,11 +210,11 @@ export default function GallerySection() {
         )}
 
         {selectedImage && (
-          <div 
+          <div
             className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
-            <button 
+            <button
               className="absolute top-4 right-4 text-white p-2 rounded-full bg-black/50 hover:bg-black/70 z-10"
               onClick={() => setSelectedImage(null)}
             >

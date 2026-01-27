@@ -20,21 +20,32 @@ const Footer = dynamic(() => import('@/components/footer'), {
   ssr: false,
 });
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
 });
 
-const playfair = Playfair_Display({ 
+const playfair = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-playfair',
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.aulaclions.com'),
   title: 'Au Lac | Lion Dance Team',
   description: 'Traditional lion dance performances for events and celebrations',
+  icons: {
+    icon: [
+      { url: '/logo.svg' },
+      { url: '/logo.svg', sizes: '32x32', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/logo.svg', sizes: '180x180', type: 'image/svg+xml' },
+    ],
+    shortcut: ['/logo.svg'],
+  },
   openGraph: {
     title: 'Au Lac | Lion Dance Team',
     description: 'Traditional lion dance performances for events and celebrations',
@@ -42,7 +53,7 @@ export const metadata: Metadata = {
     siteName: 'Au Lac Lion Dance',
     images: [
       {
-        url: 'https://www.aulaclions.com/images/hero/hero4-min.JPG', // Place this image in your public/images folder
+        url: '/logo.svg',
         width: 1200,
         height: 630,
         alt: 'Au Lac Lion Dance performing',

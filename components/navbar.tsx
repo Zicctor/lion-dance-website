@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Mail, Phone, Instagram, Facebook } from 'lucide-react';
+import Image from 'next/image';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -32,18 +33,27 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'glass shadow-lg py-2' : 'bg-transparent py-4'
-      }`}
+      className={`sticky top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass shadow-lg py-4' : 'bg-transparent py-8'
+        }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo on left */}
         <div className="flex-shrink-0">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-playfair text-2xl font-bold text-gradient">
-              Au Lac
-            </span>
-            <span className="font-playfair text-xl text-white/90">Lion Dance</span>
+          <Link href="/" className="flex items-center gap-4">
+            <Image
+              src="/logo.svg"
+              alt="Au Lac Logo"
+              width={80}
+              height={80}
+              className="w-16 h-16 md:w-20 md:h-20 drop-shadow-md transition-transform hover:scale-105"
+              priority
+            />
+            <div className="flex flex-col -space-y-1">
+              <span className="font-playfair text-2xl md:text-3xl font-bold text-gradient leading-tight">
+                Au Lac
+              </span>
+              <span className="font-playfair text-lg md:text-xl text-white/90 leading-tight">Lion Dance</span>
+            </div>
           </Link>
         </div>
 
@@ -64,18 +74,18 @@ export default function Navbar() {
 
         {/* Social Icons on right */}
         <div className="hidden md:flex items-center gap-6 flex-shrink-0">
-          <a 
-            href="https://www.instagram.com/aulaclions/" 
-            target="_blank" 
+          <a
+            href="https://www.instagram.com/aulaclions/"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-white/80 hover:text-red-500 transition-colors"
             aria-label="Instagram"
           >
             <Instagram className="h-5 w-5" />
           </a>
-          <a 
-            href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr" 
-            target="_blank" 
+          <a
+            href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-white/80 hover:text-red-500 transition-colors"
             aria-label="Facebook"
@@ -111,18 +121,18 @@ export default function Navbar() {
             ))}
             <div className="flex flex-col gap-4 pt-4">
               <div className="flex gap-4">
-                <a 
-                  href="https://www.instagram.com/aulaclions/" 
-                  target="_blank" 
+                <a
+                  href="https://www.instagram.com/aulaclions/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/80 hover:text-red-500 transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a 
-                  href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr" 
-                  target="_blank" 
+                <a
+                  href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/80 hover:text-red-500 transition-colors"
                   aria-label="Facebook"

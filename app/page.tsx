@@ -2,7 +2,11 @@ import HeroSection from '@/components/hero-section';
 import SponsorsSection from '@/components/sponsors-section';
 import AboutSection from '@/components/about-section';
 import JoinSection from '@/components/join-section';
-import GallerySection from '@/components/gallery-section';
+import dynamic from 'next/dynamic';
+
+const GallerySection = dynamic(() => import('@/components/gallery-section'), {
+  ssr: false,
+});
 import ContactSection from '@/components/contact-section';
 import TestimonialsSection from '@/components/testimonials-section';
 import FaqSection from '@/components/faq-section';

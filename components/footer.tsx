@@ -17,7 +17,7 @@ export default function Footer() {
               height={200}
               className="w-60 h-60"
             />
-            <h3 className="font-playfair text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+            <h3 className="font-playfair text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent text-center">
               Au Lac Lion Dance Association
             </h3>
           </div>

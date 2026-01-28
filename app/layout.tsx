@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     title: 'Au Lac | Lion Dance Association',
     description: 'Traditional lion dance performances for events and celebrations',
     url: 'https://www.aulaclions.com/',
-    siteName: 'Au Lac Lion Dance',
+    siteName: 'Au Lac Lion Dance Association',
     images: [
       {
         url: '/logo.svg',
         width: 1200,
         height: 630,
-        alt: 'Au Lac Lion Dance performing',
+        alt: 'Au Lac Lion Dance Association performing',
       },
     ],
     locale: 'en_US',
@@ -94,7 +94,7 @@ export default function RootLayout({
                   Au Lac
                 </span>
                 <span className="font-playfair text-3xl md:text-4xl text-white/90 leading-tight">
-                  Lion Dance
+                  Lion Dance Association
                 </span>
               </div>
             </Link>

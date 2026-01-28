@@ -13,12 +13,12 @@ export default function Footer() {
             <Image
               src="/logo.svg"
               alt="Au Lac Logo"
-              width={160}
-              height={160}
-              className="w-32 h-32"
+              width={200}
+              height={200}
+              className="w-60 h-60"
             />
             <h3 className="font-playfair text-3xl font-bold bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-              Au Lac Lion Dance
+              Au Lac Lion Dance Association
             </h3>
           </div>
 
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
           {/* Copyright */}
           <p className="text-white/60 text-sm">
-            © {new Date().getFullYear()} Au Lac Lion Dance. All rights reserved.
+            © {new Date().getFullYear()} Au Lac Lion Dance Association. All rights reserved.
           </p>
         </div>
       </div>

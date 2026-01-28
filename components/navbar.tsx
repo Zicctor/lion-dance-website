@@ -33,113 +33,82 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass shadow-lg py-4' : 'bg-transparent py-8'
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass shadow-lg py-4 border-b border-white/5' : 'bg-transparent py-8'
         }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo on left */}
-        <div className="flex-shrink-0">
-          <Link href="/" className="flex items-center gap-4">
-            <Image
-              src="/logo.svg"
-              alt="Au Lac Logo"
-              width={80}
-              height={80}
-              className="w-16 h-16 md:w-20 md:h-20 transition-transform hover:scale-105"
-              priority
-            />
-            <div className="flex flex-col -space-y-1">
-              <span className="font-playfair text-2xl md:text-3xl font-bold text-gradient leading-tight">
-                Au Lac
-              </span>
-              <span className="font-playfair text-lg md:text-xl text-white/90 leading-tight">Lion Dance</span>
-            </div>
-          </Link>
-        </div>
+      <div className="container mx-auto px-4 flex items-center justify-between h-full relative">
+        {/* Spacer to prevent links from overlapping the fixed logo corner */}
+        <div className="hidden lg:block w-[160px] xl:w-[280px] pointer-events-none opacity-0"></div>
 
         {/* Desktop Navigation - Centered */}
-        <div className="hidden md:block flex-grow text-center">
-          <nav className="inline-flex justify-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-white/80 hover:text-red-500 transition-colors font-medium"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
+        <nav className="hidden md:flex items-center gap-8 lg:gap-12 flex-1 justify-center">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-white/80 hover:text-red-500 transition-colors font-medium text-lg tracking-wide whitespace-nowrap"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
 
-        {/* Social Icons on right */}
-        <div className="hidden md:flex items-center gap-6 flex-shrink-0">
+        {/* Social Icons - Synced with Navbar bar */}
+        <div className="hidden md:flex items-center gap-4 lg:gap-6 ml-auto">
           <a
             href="https://www.instagram.com/aulaclions/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/80 hover:text-red-500 transition-colors"
+            className="text-white/80 hover:text-red-500 transition-all hover:scale-110"
             aria-label="Instagram"
           >
-            <Instagram className="h-5 w-5" />
+            <Instagram className="h-5 w-5 lg:h-6 lg:w-6" />
           </a>
           <a
             href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/80 hover:text-red-500 transition-colors"
+            className="text-white/80 hover:text-red-500 transition-all hover:scale-110"
             aria-label="Facebook"
           >
-            <Facebook className="h-5 w-5" />
+            <Facebook className="h-5 w-5 lg:h-6 lg:w-6" />
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden text-white"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </Button>
+        {/* Mobile Menu Button - Right side */}
+        <div className="md:hidden ml-auto">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-white bg-white/5 hover:bg-white/10"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </Button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Content */}
       {mobileMenuOpen && (
-        <nav className="md:hidden glass shadow-lg">
+        <nav className="md:hidden glass border-t border-white/5">
           <div className="container mx-auto px-4 py-4 flex flex-col">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="py-3 text-white/80 hover:text-red-500 transition-colors border-b border-white/10 last:border-0"
+                className="py-3 text-white/80 hover:text-red-500 transition-colors border-b border-white/10 last:border-0 text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
-            <div className="flex flex-col gap-4 pt-4">
-              <div className="flex gap-4">
-                <a
-                  href="https://www.instagram.com/aulaclions/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/80 hover:text-red-500 transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/80 hover:text-red-500 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-5 w-5" />
-                </a>
-              </div>
+            <div className="flex justify-center gap-8 pt-6">
+              <a href="https://www.instagram.com/aulaclions/" target="_blank" rel="noopener noreferrer" className="text-white/80">
+                <Instagram className="h-6 w-6" />
+              </a>
+              <a href="https://www.facebook.com/share/14yd61VZWr/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-white/80">
+                <Facebook className="h-6 w-6" />
+              </a>
             </div>
           </div>
         </nav>

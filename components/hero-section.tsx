@@ -68,7 +68,7 @@ export default function HeroSection() {
 
       <div className="relative z-20 container mx-auto px-4 pt-20 flex flex-col items-center text-center">
         <AnimatedComponent delay={0.1}>
-          <div className="h-48 sm:h-64 md:h-[300px] lg:h-[400px] flex items-center justify-center mb-4 md:mb-8 overflow-visible">
+          <div className="h-64 sm:h-80 md:h-[350px] lg:h-[500px] flex items-center justify-center mb-4 md:mb-8 overflow-visible">
             <Image
               src="/logo.svg"
               alt="Au Lac Lion Association Logo"

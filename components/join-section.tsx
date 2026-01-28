@@ -25,7 +25,7 @@ export default function JoinSection() {
               <CardHeader>
                 <CardTitle>What you will learn</CardTitle>
                 <CardDescription>
-                  Join as a performer and be the heart of our lion dance team
+                  Join as a performer and be the heart of our lion dance association
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -39,7 +39,7 @@ export default function JoinSection() {
                       <li>Help maintain lion dance costumes and equipment</li>
                     </ul>
                   </div>
-                  
+
                   <div>
                     <h4 className="font-medium mb-2">Requirements:</h4>
                     <ul className="list-disc pl-5 space-y-1 text-muted-foreground">

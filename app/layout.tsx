@@ -108,7 +108,7 @@ export default function RootLayout({
         <FollowPointerTopButton />
         <SpeedInsights />
         <Analytics />
-        <NotificationPopup />
+        {/* <NotificationPopup /> */}
       </body>
     </html>
   );

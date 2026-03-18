@@ -48,7 +48,7 @@ const galleryImages = [
   { id: "v1751772242/wgmrbt8bpgvqy1sf6zc7", category: "all" },
   { id: "v1773823417/obfmhkzjna8huyx9a85b", category: "performances" },
   { id: "v1773823419/kizrf5xmz8ixmibhmqhz", category: "performances" },
-  { id: "v1773823423/pyb2vzehfjoo963mw6xo", category: "performances" },
+  { id: "v1773855349/pyb2vzehfjoo963mw6xo", category: "performances" },
   { id: "v1773823426/gceeutirr2wbgthmg5sx", category: "performances" },
 
 ].sort((a, b) => getCloudinaryVersion(b.id) - getCloudinaryVersion(a.id)).map(img => ({

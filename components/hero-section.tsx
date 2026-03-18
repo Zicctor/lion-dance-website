@@ -14,6 +14,7 @@ const backgroundImages = [
   "https://res.cloudinary.com/du9fgslde/image/upload/v1751772136/j0av0wqybdlg8smlvlea.jpg",
   "https://res.cloudinary.com/du9fgslde/image/upload/v1751772135/fenoidlxwvvedexab4av.jpg",
   "https://res.cloudinary.com/du9fgslde/image/upload/v1751772135/dqixm1kkvqxe2fo4lxzg.jpg",
+  "https://res.cloudinary.com/du9fgslde/image/upload/v1773823423/pyb2vzehfjoo963mw6xo.jpg",
 ];
 
 export default function HeroSection() {

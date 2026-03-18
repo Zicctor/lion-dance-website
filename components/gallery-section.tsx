@@ -8,6 +8,11 @@ import { useInView } from 'react-intersection-observer';
 
 const CLOUDINARY_BASE = "https://res.cloudinary.com/du9fgslde/image/upload";
 
+const getCloudinaryVersion = (id: string) => {
+  const version = id.match(/v(\d+)\//)?.[1] ?? "0";
+  return Number.parseInt(version, 10);
+};
+
 const galleryImages = [
   { id: "v1751772234/m7czc3wngvhe8maei6yc", category: "performances" },
   { id: "v1751772234/nzuihd6lgkhviu9xafxl", category: "performances" },
@@ -41,7 +46,12 @@ const galleryImages = [
   { id: "v1762745224/drov3vyfmmc1oy12qwpu", category: "members" },
   { id: "v1751772243/zn6dlzpyp7nt5t82rlwn", category: "all" },
   { id: "v1751772242/wgmrbt8bpgvqy1sf6zc7", category: "all" },
-].map(img => ({
+  { id: "v1773823417/obfmhkzjna8huyx9a85b", category: "performances" },
+  { id: "v1773823419/kizrf5xmz8ixmibhmqhz", category: "performances" },
+  { id: "v1773823423/pyb2vzehfjoo963mw6xo", category: "performances" },
+  { id: "v1773823426/gceeutirr2wbgthmg5sx", category: "performances" },
+
+].sort((a, b) => getCloudinaryVersion(b.id) - getCloudinaryVersion(a.id)).map(img => ({
   src: `${CLOUDINARY_BASE}/c_fill,w_400,h_300,f_auto,q_auto,dpr_auto/${img.id}.jpg`,
   alt: img.alt || "",
   category: img.category,
